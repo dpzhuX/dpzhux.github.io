@@ -172,6 +172,14 @@ since: 2013
 
 ```
 
+```cpp
+#include <iostream>
+using namespace std;
+int main(int argc, char** arv){
+  return 0;
+}
+```
+
 ## Browser support
 
 ![Browser support](http://iissnan.com/nexus/next/browser-support.png)
