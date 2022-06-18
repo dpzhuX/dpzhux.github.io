@@ -4,7 +4,7 @@ title: "MathJax with Jekyll"
 date: 2014-02-16
 categories: opinion
 tags: [resources, jekyll]
-image: http://gastonsanchez.com/images/blog/mathjax_logo.png
+image: https://gastonsanchez.com/images/blog/mathjax_logo.png
 ---
 
 One of the rewards of switching my website to [Jekyll](http://jekyllrb.com/) is the
@@ -37,7 +37,7 @@ To load the MathJax javascript, I added the following lines in my layout ```post
 
 {% highlight r %}
 <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 {% endhighlight %}
 
@@ -65,7 +65,7 @@ MathJax.Hub.Config({
 
 Here's a short list of examples. To know more about the details behind MathJax, you can
 always checked the provided documentation available at
-[http://docs.mathjax.org/en/latest/](http://docs.mathjax.org/en/latest/)
+[https://docs.mathjax.org/en/latest/](http://docs.mathjax.org/en/latest/)
 
 Let's try a first example. Here's a dummy equation:
 
