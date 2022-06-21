@@ -6,7 +6,7 @@
 # Site
 title: NOPE
 subtitle: The More We See, the Less We Know.
-description: Write down everything we learn from life.
+description: Writing things down can change your life.
 author: Derek Z.
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
@@ -274,10 +274,10 @@ sidebar:
   offset_float: 0
 
   # Back to top in sidebar
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button
-  scrollpercent: false
+  scrollpercent: true
 
 
 # Blog rolls
