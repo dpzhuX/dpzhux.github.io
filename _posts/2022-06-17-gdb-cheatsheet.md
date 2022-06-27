@@ -1,10 +1,10 @@
 ---
 title: GDB Cheat Sheet
-description: The command for GDB usage
 categories:
  - Notes
 tags:
  - Notes
+description: The command for GDB usage
 ---
 
 > GDB cheat sheet
