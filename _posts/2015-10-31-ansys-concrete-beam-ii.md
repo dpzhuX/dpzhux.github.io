@@ -13,7 +13,7 @@ In previous post, the work with ANSYS on calculating reinforced concrete beams w
 
 The model is as follows: a beam with a span of 3m and a cross-section of 0.2×0.3m, featuring a 25mm concrete protective layer. The reinforcement layout is depicted in the following schematic,
 
-![Original model](/uploads/imgs/2015/RCBEAM.svg)
+![Dimensions](/uploads/imgs/2015/RCBEAM.svg)
 
 Material properties for the concrete include an elastic modulus of 2.55E4MPa, a standard value for axial compressive strength of 13.4MPa, and a standard value for axial tensile strength of 1.55MPa, with corresponding strains of 0.002 and 0.0033, respectively.
 

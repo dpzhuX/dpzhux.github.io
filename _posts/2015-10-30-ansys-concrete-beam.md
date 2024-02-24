@@ -13,7 +13,7 @@ I was interested in performing finite element analysis of uniformly loaded concr
 
 The beam is simply supported at both ends and subjected to a uniform load of 0.3Mpa, as illustrated below,
 
-![Original model](/uploads/imgs/2015/Ansys_Concrete_Cal.svg)
+![Dimensions](/uploads/imgs/2015/Ansys_Concrete_Cal.svg)
 
 When selecting material parameters, the choice of concrete properties directly affects the convergence of the results. Here, the elastic parameters of concrete are not provided as it can be found in different books; The plastic parameters are set here, which are kept relatively simple as shown below,
 
