@@ -1,5 +1,5 @@
 ---
-title: ANSYS reinforced concrete beam analysis with elasto-plasticity
+title: ANSYS concrete beam analysis with elasto-plasticity
 date: 2015-10-31 10:32:15
 categories:
 - Exploration

@@ -7,9 +7,8 @@ photos:
 - https://source.unsplash.com/random/600×300
 - https://source.unsplash.com/random/600×300
 - https://source.unsplash.com/random/600×300
-tags:
-- consectetur
-description: Gallery Post Test. 测试图片类文章的显示。
+tags: 
+description: Gallery Post Test.
 ---
 
 Nunc dignissim volutpat enim, non sollicitudin purus dignissim id. Nam sit amet urna eu velit lacinia eleifend. Proin auctor rhoncus ligula nec aliquet. Donec sodales molestie lacinia. Curabitur dictum faucibus urna at convallis. Aliquam in lectus at urna rutrum porta. In lacus arcu, molestie ut vestibulum ut, rhoncus sed eros. Sed et elit vitae risus pretium consectetur vel in mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus turpis quis lectus rhoncus adipiscing. Proin pulvinar placerat suscipit. Maecenas imperdiet, quam vitae varius auctor, enim mauris vulputate sapien, nec laoreet neque diam non quam.

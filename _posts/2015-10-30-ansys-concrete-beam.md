@@ -1,5 +1,5 @@
 ---
-title: ANSYS reinforced concrete beam analysis
+title: ANSYS concrete beam analysis
 date: 2015-10-30 16:52:00
 categories:
 - Exploration
