@@ -2,13 +2,16 @@
 title: ANSYS reinforced concrete beam analysis
 date: 2015-10-30 16:52:00
 categories:
-- Archives
+- Exploration
 tags:
 - ANSYS
-description: This post archives the ANSYS reinforced concrete beam analysis
 ---
 
-I was interested in performing finite element analysis of uniformly loaded concrete beams but did not start due to the complexity of choosing appropriate material and load parameters. Recently, there exists an example that seemed perfect for practice. The subject of analysis is a concrete beam with a length of 3m and cross-sectional dimensions of 0.1×0.2m. To simplify the model, the concrete protective layer on the bottom and sides is not considered. The beam is reinforced at the bottom with two 20mm diameter steel rebars, treated as elastic and without accounting for elastoplastic behavior. The beam is simply supported at both ends and subjected to a uniform load of 0.3Mpa, as illustrated below,
+I was interested in performing finite element analysis of uniformly loaded concrete beams but did not start due to the complexity of choosing appropriate material and load parameters. Recently, there exists an example that seemed perfect for practice. The subject of analysis is a concrete beam with a length of 3m and cross-sectional dimensions of 0.1×0.2m. To simplify the model, the concrete protective layer on the bottom and sides is not considered. The beam is reinforced at the bottom with two 20mm diameter steel rebars, treated as elastic and without accounting for elastoplastic behavior. 
+
+<!-- more -->
+
+The beam is simply supported at both ends and subjected to a uniform load of 0.3Mpa, as illustrated below,
 
 ![Original model](/uploads/imgs/2015/Ansys_Concrete_Cal.svg)
 
