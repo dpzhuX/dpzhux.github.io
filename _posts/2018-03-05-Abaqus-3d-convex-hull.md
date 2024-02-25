@@ -9,6 +9,8 @@ tags:
 
 Convex hull is the smallest envelope that contains the points set. It is used to construct the grain in grain-based model. There are several methods to generate the convex hull data, but it may need some efforts if you want to put it into ABAQUS model. Here, I post a simple method which is suitable for programming.
 
+<!-- more -->
+
 ### Generate convex hull data
 
 Several methods can be used to generate the convex hull data. I am used to generate the convex hull data with my own code. But if you do not like write code, you can use Mathematica or Matlab to generate the data.

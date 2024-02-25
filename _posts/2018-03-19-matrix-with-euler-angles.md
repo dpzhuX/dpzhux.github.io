@@ -1,6 +1,6 @@
 ---
 title: Matrix with Euler angles
-date: 2018-03-05 16:47:02
+date: 2018-03-19 08:40:02
 categories:
 - Snippet
 tags:
@@ -8,6 +8,8 @@ tags:
 ---
 
 This snippet posts an Excel to calculate the matrix with Euler angles. To describe the rotation of a crystal frame, commonly, we use three angles: $ \alpha$, $ \beta$, and $ \gamma$. They are also known as Bunge angles.
+
+<!-- more -->
 
 The matrix to rotate the crystal frame in reference frame is described by Euler angles as below:
 
