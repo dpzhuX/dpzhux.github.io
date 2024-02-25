@@ -25,8 +25,10 @@ After clicking "Done", CMake will configure the code,
 
 Now, we create another folder called "VTK_Bin" which is used to install VTK libraries. In CMake, we need change two options,
 
+```
 CMAKE_INSTALL_PREFIX: /User/zhudongping/Documents/Code/VTK_Bin
 VTK_Group_Qt: ON
+```
 
 ![CMake](/uploads/images/2018/BuildVtkForQt4.png)
 

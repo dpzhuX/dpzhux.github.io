@@ -43,7 +43,7 @@ The potential energy of the particle in a chamber is expressed as:
 
 $$ \displaystyle U = \alpha e^{- \beta(R-r)}$$
 
-Here the exponent function is used to describe the repulsion from the chamber wall. when the distance $|| R-r ||$ close to zero, the repulsion potential will be much large and prevent the particle penetrating the chamber wall. The Lagrangian function and equations are:
+Here the exponent function is used to describe the repulsion from the chamber wall. when the distance $R-r$ close to zero, the repulsion potential will be much large and prevent the particle penetrating the chamber wall. The Lagrangian function and equations are:
 
 $$ \displaystyle L = \frac{m}{2} (\dot{x}^2+\dot{y}^2)-\alpha e^{-\beta (R-\sqrt{x^2+y^2})}$$
 
