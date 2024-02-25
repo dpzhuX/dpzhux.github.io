@@ -1,10 +1,10 @@
 ---
-title: ANSYS concrete beam analysis
+title: Ansys concrete beam analysis
 date: 2015-10-30 16:52:00
 categories:
 - Exploration
 tags:
-- ANSYS
+- Ansys
 ---
 
 I was interested in performing finite element analysis of uniformly loaded concrete beams but did not start due to the complexity of choosing appropriate material and load parameters. Recently, there exists an example that seemed perfect for practice. The subject of analysis is a concrete beam with a length of 3m and cross-sectional dimensions of 0.1×0.2m. To simplify the model, the concrete protective layer on the bottom and sides is not considered. The beam is reinforced at the bottom with two 20mm diameter steel rebars, treated as elastic and without accounting for elastoplastic behavior. 
@@ -36,11 +36,14 @@ The image above represents the overall mesh model, not the rebar cage. The next 
 After solving, results can be viewed using the PLNSOL and PLDISP commands, listing several outcomes (deformation, S1, S3, SYZ),
 
 ![Deformation](/uploads/imgs/2015/Ansys_Concrete_Cal5.png)
+
 ![S1](/uploads/imgs/2015/Ansys_Concrete_Cal6.png)
+
 ![S3](/uploads/imgs/2015/Ansys_Concrete_Cal7.png)
+
 ![SYZ](/uploads/imgs/2015/Ansys_Concrete_Cal8.png)
 
-Finally, it's worth mentioning that ANSYS provides specific commands for visualizing crack patterns in concrete materials, such as PLCRACK. This command can be used to examine the distribution of cracks, as shown below,
+Finally, it's worth mentioning that Ansys provides specific commands for visualizing crack patterns in concrete materials, such as PLCRACK. This command can be used to examine the distribution of cracks, as shown below,
 
 ![Solve](/uploads/imgs/2015/Ansys_Concrete_Cal9.png)
 

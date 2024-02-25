@@ -1,13 +1,13 @@
 ---
-title: ANSYS reliability analysis for wrench
+title: Ansys reliability analysis for wrench
 date: 2015-11-03 09:18:23
 categories:
 - Exploration
 tags:
-- ANSYS
+- Ansys
 ---
 
-This post conducts a reliability analysis on a wrench in practical use via ANSYS. Reliability analysis is a statistical method used to study the ability of a system or component to perform its required functions under stated conditions for a specified period of time. It's fundamentally concerned with the assessment and prediction of product lifespan and identifying the likelihood of failures. The goal of reliability analysis is to identify areas of improvement in the design, manufacturing, and operational processes to enhance the overall dependability of products or systems. 
+This post conducts a reliability analysis on a wrench in practical use via Ansys. Reliability analysis is a statistical method used to study the ability of a system or component to perform its required functions under stated conditions for a specified period of time. It's fundamentally concerned with the assessment and prediction of product lifespan and identifying the likelihood of failures. The goal of reliability analysis is to identify areas of improvement in the design, manufacturing, and operational processes to enhance the overall dependability of products or systems. 
 
 <!-- more -->
 
@@ -35,13 +35,13 @@ The wrench model is constructed using the SHELL63 element, which is straightforw
 
 To achieve our objective of obtaining the component's maximum internal force for comparison with standard yield stress, the NSORT command is first used in APDL to sort all nodes by stress. Then, the *GET command retrieves the maximum stress value at the point.
 
-Define the variable name corresponding to the G(x) function and assign a value. ANSYS Scalar Parameters can be used to check these variables. The defined variable name here is DETSS,
+Define the variable name corresponding to the G(x) function and assign a value. Ansys Scalar Parameters can be used to check these variables. The defined variable name here is DETSS,
 
 ![Scalar parameters](/uploads/imgs/2015/PDSAnalysis2.png)
 
 After successfully completing the analysis, the LGWRITE command records the entire analysis process into a file as a command stream.
 
-Entering the PDS analysis module can be done by clicking Prob Design in the ANSYS interface or entering /PDS in the command stream, followed by specifying the file needed for analysis, which is the file just written:
+Entering the PDS analysis module can be done by clicking Prob Design in the Ansys interface or entering /PDS in the command stream, followed by specifying the file needed for analysis, which is the file just written:
 
 ![Analysis files](/uploads/imgs/2015/PDSAnalysis3.png)
 
@@ -66,11 +66,13 @@ Run the analysis, with the duration depending on the machine's capability and th
 Upon completion, the results are as follows:
 
 ![DETSS](/uploads/imgs/2015/PDSAnalysis7.png)
+
 ![Probability large than zero](/uploads/imgs/2015/PDSAnalysis8.png)
 
 From the results, it can be observed that the probability of the wrench not failing is approximately 0.9659 at a 95% confidence level. The following figure shows the sensitivity coefficients between random input variables and random output variables, as well as the impact of the wrench's length on the output variable:
 
-![DETSS](/uploads/imgs/2015/PDSAnalysis9.png)
-![DETSS](/uploads/imgs/2015/PDSAnalysis10.png)
+![Correlation sensitivities](/uploads/imgs/2015/PDSAnalysis9.png)
+
+![Sensitivity of length](/uploads/imgs/2015/PDSAnalysis10.png)
 
 > The model is a test model, and the APDL code is available upon request.

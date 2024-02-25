@@ -1,10 +1,10 @@
 ---
-title: ANSYS submodel analysis
+title: Ansys submodel analysis
 date: 2015-10-28 12:30:00
 categories:
 - Exploration
 tags:
-- ANSYS
+- Ansys
 ---
 
 When finite element models are large, analysis on a standard computer can become challenging. Typically, the model is divided into coarser meshes in such cases, but this comes at the cost of losing analysis precision. When accurate local results are needed for a model's specific area, the options are either to refine the mesh locally or to use submodel analysis techniques. The former has a significant drawback, mainly because even coarsely divided large models require considerable computational effort. Refining the mesh locally undoubtedly increases the computational load. 
@@ -15,12 +15,12 @@ Submodel analysis, on the other hand, involves cutting and extracting a local mo
 
 ![Image](/uploads/imgs/2015/Global-and-Submodel-of-Wheel-Rim-Stress-Analysis.png)
 
-According to ANSYS Help, submodel analysis has two limitations:
+According to Ansys Help, submodel analysis has two limitations:
 
 * It is only effective for solid and shell elements.
 * The boundaries of the submodel must be far from stress concentration areas.
 
-Submodel analysis in ANSYS typically involves the following steps:
+Submodel analysis in Ansys typically involves the following steps:
 
 * Create the original model and divide it into coarser meshes.
 * Create a submodel, divide it into finer meshes, and save the nodes at the boundaries.
@@ -43,7 +43,7 @@ In the post-processing /POST1, reopen the original model's result file and gener
 
 ![Boundary condition data](/uploads/imgs/2015/Global-and-Submodel-of-Wheel-Rim-Stress-Analysis4.png)
 
-The generated data file is essentially ANSYS's displacement APDL command. Thus, by using /INPUT or GUI to read in the submodel, boundary adjustments can be made, allowing further application of corresponding load conditions and analysis. The final submodel result can be calculated,
+The generated data file is essentially Ansys's displacement APDL command. Thus, by using /INPUT or GUI to read in the submodel, boundary adjustments can be made, allowing further application of corresponding load conditions and analysis. The final submodel result can be calculated,
 
 ![Final submodel result](/uploads/imgs/2015/Global-and-Submodel-of-Wheel-Rim-Stress-Analysis5.png)
 
