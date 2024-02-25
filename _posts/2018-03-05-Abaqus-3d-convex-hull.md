@@ -24,7 +24,7 @@ ConvexHullMesh[pts]
 
 Then, you need to do some extra work to get the detail of this convex hull.  To generate the convex hull in ABAQUS, you need to save the points, edges and faces information to file.
 
-### Generate convex hull in ABAQUS
+### Generate convex hull model
 
 Unlike Ansys, it is hard to manipulate the points and lines in ABAQUS. Here is a simple method to generate a polyhedron in ABAQUS with GUI.
 
