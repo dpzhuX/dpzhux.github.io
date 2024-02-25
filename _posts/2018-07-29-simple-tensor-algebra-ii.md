@@ -19,7 +19,7 @@ $${\boldsymbol{x}} \cdot {\boldsymbol{y}} = {x_i}{\boldsymbol{g}^i} \cdot {y_j}{
 {y_1}\\
 {y_2}\\
 {y_3}
-\end{array}} \right] = \sum\limits_{i = 1}^3 {x_i} {y_i}$$
+\end{array}} \right]$$
 
 The dot product is also called scalar product or inner product under Cartesian coordinates and it provides the Euclidean magnitudes of these two vectors and the cosine of the angle between them.
 
@@ -184,7 +184,7 @@ Rearrange the equation,
 
 $$ \displaystyle \boldsymbol r(\alpha) = (\boldsymbol g_3 \otimes \boldsymbol g_3) \boldsymbol r + \cos(\alpha) \boldsymbol r - \cos(\alpha) (\boldsymbol g_3 \otimes \boldsymbol g_3) \boldsymbol r +  \sin(\alpha) (\boldsymbol g_3 \times |\boldsymbol b|\boldsymbol g_1) \qquad (9)$$
 
-Since $ \boldsymbol r = |\boldsymbol a| \boldsymbol g_3 +|\boldsymbol b| \boldsymbol g_1$, the corss product $ \boldsymbol g_3 \times |\boldsymbol b|\boldsymbol g_1$ can be written by,
+Since $ \boldsymbol r = \lvert \boldsymbol a \rvert \boldsymbol g_3 + \lvert \boldsymbol b\rvert \boldsymbol g_1$, the corss product $ \boldsymbol g_3 \times \lvert \boldsymbol b \rvert \boldsymbol g_1$ can be written by,
 
 $$ \displaystyle \boldsymbol g_3 \times |\boldsymbol b|\boldsymbol g_1 =\boldsymbol g_3 \times (\boldsymbol r -|\boldsymbol a| \boldsymbol g_3) =\boldsymbol g_3 \times \boldsymbol r \qquad (10)$$
 
