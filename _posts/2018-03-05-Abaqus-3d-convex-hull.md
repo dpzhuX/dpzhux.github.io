@@ -1,6 +1,6 @@
 ---
 title: Abaqus create 3D convex hull
-date: 2018-02-23 12:13:23
+date: 2018-03-05 16:47:02
 categories:
 - Exploration
 tags:
