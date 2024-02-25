@@ -11,7 +11,7 @@ This snippet demonstrates the polt format that I often used in Wolfram Mathemati
 
 <!-- more -->
 
-```
+```bash
 Plot[Sin[x], {x, -Pi, Pi}, 
      Mesh->None, PlotRange->{{-Pi, Pi}, {-2, 2}}, 
      AspectRatio->9/16, PlotTheme->"Scientific", FrameStyle->Black, 
