@@ -59,7 +59,7 @@ Let $ \mathcal{G} = \{\boldsymbol{g}_1, \boldsymbol{g}_2, \boldsymbol{g}_3,\dots
 
 $$ \displaystyle \boldsymbol{x} = \sum_{i=1}^{n} x^i \boldsymbol{g}_i =  x^i \boldsymbol{g}_i $$
 
-The expression is shorten without the summation symbol. This is called the Einstein summation. As shown on the mathworld, there are three rules of this notational convention:
+The expression is shorten without the summation symbol. This is called the Einstein summation. As shown on the [mathworld](https://mathworld.wolfram.com/EinsteinSummation.html), there are three rules of this notational convention:
 
 * Repeated indices are implicitly summed over,
 * Each index can appear at most twice in any term,
@@ -245,30 +245,3 @@ a_1 &a_2 &a_3 \\
 b_1 &b_2 &b_3 \\
 \boldsymbol{e}_1 &\boldsymbol{e}_2 &\boldsymbol{e}_3
 \end{vmatrix}$$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
