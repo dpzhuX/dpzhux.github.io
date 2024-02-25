@@ -1,5 +1,5 @@
 ---
-title: Snippet: matrix with Euler angles
+title: Matrix with Euler angles
 date: 2018-03-05 16:47:02
 categories:
 - Snippet
