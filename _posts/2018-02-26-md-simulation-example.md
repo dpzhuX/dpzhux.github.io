@@ -9,6 +9,8 @@ tags:
 
 This is a homework of computational nanomechanics. The basic requirement is to use the Lagrangian function to describe the motion of particles. In homework, it requires 5 particles. As an enhancement, I rewrote the code with Qt and use GNU Scientific Library(GSL) to finish the task.
 
+<!-- more -->
+
 ### Concept
 
 The Lagrangian equation of motion describe the particle motion with energy method, the equation is:
@@ -20,8 +22,6 @@ $ L$ is the Lagrangian function of the system, $ k$ denotes the degree of freedo
 $$ \displaystyle L = T - U$$
 
 $ T$ is the kinetic energy and $ U$ is the potential energy.
-
-<!-- more -->
 
 Since the derivative of $ U$ with respect to $ x$ is the force
 
@@ -43,7 +43,7 @@ The potential energy of the particle in a chamber is expressed as:
 
 $$ \displaystyle U = \alpha e^{- \beta(R-r)}$$
 
-Here the exponent function is used to describe the repulsion from the chamber wall. when the distance $latex R-r$ close to zero, the repulsion potential will be much large and prevent the particle penetrating the chamber wall. The Lagrangian function and equations are:
+Here the exponent function is used to describe the repulsion from the chamber wall. when the distance $|| R-r ||$ close to zero, the repulsion potential will be much large and prevent the particle penetrating the chamber wall. The Lagrangian function and equations are:
 
 $$ \displaystyle L = \frac{m}{2} (\dot{x}^2+\dot{y}^2)-\alpha e^{-\beta (R-\sqrt{x^2+y^2})}$$
 
@@ -58,7 +58,7 @@ $$
 
 For this example, we take the following parameters:
 
-$$ \displaystyle \alpha = 10^{-27}, \beta = 4nm^-1, R = 10nm, m = 10^{-9}kg$$
+$$ \displaystyle \alpha = 10^{-27}, \beta = 4nm^{-1}, R = 10nm, m = 10^{-9}kg$$
 
 The initial conditions are:
 
@@ -72,7 +72,7 @@ Using Mathematica ([MDSimulation1.nb](/uploads/files/2018/MDSimulation1.zip)) t
 
 ### Lennard-Jones potential function
 
-Lennard-Jones potential function is almost the world-famous potential function in nano mechanics. It describes the interaction between atoms. The function was proposed through quantum perturbation theory in which the attraction should follow a $latex r^{6}$ relation. It combines the attraction and repulsion together.
+Lennard-Jones potential function is almost the world-famous potential function in nano mechanics. It describes the interaction between atoms. The function was proposed through quantum perturbation theory in which the attraction should follow a $r^{6}$ relation. It combines the attraction and repulsion together.
 
 $$ \displaystyle U(r_{ij})=4 \varepsilon \left[ \left(\frac{\sigma}{r_{ij}} \right)^{12} - \left( \frac{\sigma}{r_{ij}}\right)^{6} \right]$$
 
@@ -82,7 +82,7 @@ Take $ \sigma = 3, \varepsilon = 0.2$, the result is shown below,
 
 ![Potential](/uploads/images/2018/MDSimulation4.png)
 
-As mentioned before, the derivative of $ U$ with respect to $latex r$ is the force. The force from Lennard-Jones interaction is simply get the derivative of $ U$:
+As mentioned before, the derivative of $ U$ with respect to $r$ is the force. The force from Lennard-Jones interaction is simply get the derivative of $ U$:
 
 $$ \displaystyle F=-U^{\prime}(r_{ij}) = -4 \varepsilon \left(\frac{6 \sigma ^6}{r^7}-\frac{12 \sigma ^{12}}{r^{13}}\right) $$
 
