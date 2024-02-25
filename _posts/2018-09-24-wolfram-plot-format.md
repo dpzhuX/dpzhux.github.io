@@ -1,5 +1,5 @@
 ---
-title: Build VTK 8.1.0 with Qt on a Mac
+title: Wolfram plot format
 date: 2018-09-24 17:50:33
 categories:
 - Snippet
@@ -12,6 +12,7 @@ This snippet demonstrates the polt format that I often used in Wolfram Mathemati
 <!-- more -->
 
 {% raw %}
+```
 Plot[Sin[x], {x, -Pi, Pi}, 
      Mesh->None, PlotRange->{{-Pi, Pi}, {-2, 2}}, 
      AspectRatio->9/16, PlotTheme->"Scientific", FrameStyle->Black, 
@@ -21,6 +22,7 @@ Plot[Sin[x], {x, -Pi, Pi},
         ToExpression[ "y = 12 \\frac{\\partial^2 f(x)}{\\partial x^2}", 
         TeXForm, HoldForm], FontFamily->"Times New Roman", FontSize->20, 
         Bold, Black], Scaled[{.25, .80}]]}]
+```
 {% endraw %}
 
 Here is the diagram,
