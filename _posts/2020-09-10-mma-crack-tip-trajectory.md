@@ -112,8 +112,8 @@ Export[fileOutPath, iMG2]
 
 Here is the result animation:
 
-![MMA](/uploads/videos/2020/CrackTipTrajectory1.mp4)
+![MMA](/uploads/images/2020/CrackTipTrajectory5.gif)
 
-![MMA](/uploads/videos/2020/CrackTipTrajectory2.mp4)
+![MMA](/uploads/images/2020/CrackTipTrajectory6.gif)
 
 
