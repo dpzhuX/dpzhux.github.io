@@ -46,6 +46,7 @@ The 1st, 29th, 38th, 42nd are shown to select the feature points here. Right-cli
 
 Paste the coordinates into the following code,
 
+{% raw %}
 ```
 trackCoord = {{335.9, 400.2}, {430.5, 406.1}, 
               {436.5, 410.6}, {444., 401.6}};
@@ -57,6 +58,7 @@ rST = MapThread[
       trackCoord}];
 rST1 = Join @@ rST
 ```
+{% endraw %}
 
 The image coordinates of the crack tip will be stored in rST1,
 
@@ -79,6 +81,7 @@ vOut = ListAnimate[iMG3]
 
 Drag the slide bar to check the tracking quality. If Mathematica lost the tracking point, you should add more tracking frames in the previous code to correct the result. If the crack tip trajectory is tracked correctly, then the following code is used to transfer the image coordinates into the real coordinates in the model,
 
+{% raw %}
 ```
 realCoord = {{4.79849, 1.83042}, {356.478, 359.281}};
 imgCoord = {{81.77, 75.45}, {720.1, 724.5}};
@@ -94,6 +97,7 @@ rST2 = xyFactor*# - xyOrigin & /@ Flatten[rST1, 1]
 ListLinePlot[Flatten[rST1, 1], Mesh -> All]
 ListLinePlot[rST2, Mesh -> All]
 ```
+{% endraw %}
 
 To calculate the real coordinates, I use the coordinates of two points. "realCoord" stores the real coordinates in the model, and "imgCoord" stores the coordinates in the image at the same model position. The result will be saved in rST2. Two list plots will be drawn to compare the coordinates,
 

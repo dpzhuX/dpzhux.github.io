@@ -1,5 +1,5 @@
 ---
-title: Snippet Wolfram plot format
+title: Snippet Mathematica plot format
 date: 2018-09-24 17:50:33
 categories:
 - Snippets
