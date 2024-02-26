@@ -2,7 +2,7 @@
 title: Plastic strain in MD simulation
 date: 2020-04-20 13:13:22
 categories:
-- Tutorial
+- Tutorials
 tags:
 - General
 ---

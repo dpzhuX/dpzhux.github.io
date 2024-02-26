@@ -2,7 +2,7 @@
 title: Abaqus UMAT environment troubleshooting
 date: 2021-10-05 15:05:05
 categories:
-- Exploration
+- Explorations
 tags:
 - Abaqus
 ---

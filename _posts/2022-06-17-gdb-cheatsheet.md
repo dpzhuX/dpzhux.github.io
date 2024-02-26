@@ -1,9 +1,9 @@
 ---
 title: GDB Cheat Sheet
 categories:
- - Notes
+- Notes
 tags:
- - Notes
+- Notes
 description: The command for GDB debug
 ---
 

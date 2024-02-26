@@ -2,9 +2,9 @@
 title: Snippet Wolfram plot format
 date: 2018-09-24 17:50:33
 categories:
-- Snippet
+- Snippets
 tags:
-- Snippet
+- Snippets
 ---
 
 This snippet demonstrates the polt format that I often used in Wolfram Mathematica.

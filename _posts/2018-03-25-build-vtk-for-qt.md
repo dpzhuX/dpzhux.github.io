@@ -2,7 +2,7 @@
 title: Build VTK 8.1.0 with Qt on a Mac
 date: 2018-03-25 13:50:12
 categories:
-- Tutorial
+- Tutorials
 tags:
 - General
 ---

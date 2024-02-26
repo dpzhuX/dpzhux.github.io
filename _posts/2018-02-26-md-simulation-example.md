@@ -2,7 +2,7 @@
 title: An example of MD simulation
 date: 2018-02-23 12:13:23
 categories:
-- Exploration
+- Explorations
 tags:
 - Dynamics
 ---

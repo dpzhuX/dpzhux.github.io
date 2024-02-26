@@ -2,7 +2,7 @@
 title: Abaqus 3D convex hull creation
 date: 2018-03-05 16:47:02
 categories:
-- Exploration
+- Explorations
 tags:
 - Abaqus
 ---

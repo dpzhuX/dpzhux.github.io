@@ -2,7 +2,7 @@
 title: Ansys submodel analysis
 date: 2015-10-28 12:30:00
 categories:
-- Exploration
+- Explorations
 tags:
 - Ansys
 ---

@@ -4,9 +4,7 @@ date: 2020-02-20 12:30:00
 categories:
 - Notes
 tags:
-- Linux 
-- System
-- Thread
+- Notes
 description: This post archives the learning on thread pool
 ---
 

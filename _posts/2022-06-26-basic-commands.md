@@ -4,9 +4,7 @@ date: 2020-06-26 18:30:00
 categories:
 - Notes
 tags: 
-- Linux 
-- System
-- Shell
+- Notes
 description: This post archives the learning on linux commands
 ---
 

@@ -2,7 +2,7 @@
 title: General Template
 date: 2014-02-20 12:30:00
 categories:
- - Tutorial
+ - Tutorials
 tags: 
 link: https://www.google.com/
 description: General template to use the theme.

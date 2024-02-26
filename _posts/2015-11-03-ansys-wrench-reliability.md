@@ -2,7 +2,7 @@
 title: Ansys reliability analysis for wrench
 date: 2015-11-03 09:18:23
 categories:
-- Exploration
+- Explorations
 tags:
 - Ansys
 ---
