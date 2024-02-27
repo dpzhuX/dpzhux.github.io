@@ -79,12 +79,17 @@
 
         </nav>
 
+        <div style="margin-top: 20px;">
+          <a href='https://clustrmaps.com/site/1adr7' title='Visit tracker'>
+              <img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=n&d=x1I-wHnRx0BNjs57NHVboxEEQrqJAU-fjmkqhACvn9g'/>
+          </a>
+        </div>
+        
         {% assign site_rss = site.rss %}
         {% if site.feed and site.feed.path and site.rss == '' or site.rss == nil %}
           {% assign site_rss = site.feed.path %}
         {% endif %}
         {% if site_rss %}
-        <a href='https://clustrmaps.com/site/1adr7'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=a&t=n&d=x1I-wHnRx0BNjs57NHVboxEEQrqJAU-fjmkqhACvn9g'/></a>
           <div class="feed-link motion-element">
             <a href="{{ site_rss | relative_url }}" rel="alternate">
               <i class="fa fa-rss"></i>
