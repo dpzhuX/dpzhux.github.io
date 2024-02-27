@@ -9,9 +9,7 @@ tags:
 
 During the subroutine environment setup, a lot of problems need to be solved. A typical problem is shown as following,
 
-```
-The job input file "Job-1.inp" has been submitted for analysis. Job Job-1: Analysis Input File Processor aborted due to errors. Error in job Job-1: Analysis Input File Processor exited with an error.
-```
+> The job input file "Job-1.inp" has been submitted for analysis. Job Job-1: Analysis Input File Processor aborted due to errors. Error in job Job-1: Analysis Input File Processor exited with an error.
 
 Such a problem can be figured out by checking the log file in the working directory. Here is the example of the "Job-1.log" in the working directory. The log file shows the "ifort" command cannot be recognized as an internal or external command. It means this command cannot be found in the system path. Actually, "ifort" is the command used to compile the Fortran file.
 
