@@ -68,7 +68,7 @@ Denote $\varphi = \varphi \left( {x,y,z} \right)$ as a scalar field and the grad
 
 $$\text{grad} \varphi = \nabla \varphi = \left( {\partial \over \partial x},{\partial \over \partial y},{\partial \over \partial z} \right)\varphi$$
 
-$$\left| {\text{grad}\varphi } \right|=\left| {\nabla \varphi } \right| = \sqrt {\left( {\partial \varphi  \over \partial x} \right)^2 + \left( {{{\partial \varphi } \over {\partial y}}} \right)^2 + {\left( {\partial \varphi \over \partial z} \right)^2}}$$
+$$\left| {\text{grad}\varphi } \right|=\left| {\nabla \varphi } \right| = \sqrt {\left( {\partial \varphi  \over \partial x} \right)^2 + \left( {\partial \varphi \over \partial y} \right)^2 + {\left( {\partial \varphi \over \partial z} \right)^2}}$$
 
 Thus, the directional derivative in direction $\boldsymbol L$,
 
