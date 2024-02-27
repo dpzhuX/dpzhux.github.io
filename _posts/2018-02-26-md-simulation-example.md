@@ -31,7 +31,7 @@ the Lagrangian equation of motion uses another way to illustrate Newton's second
 
 ### Single particle example
 
-![Single particle example](/uploads/images/2018/MDSimulation1.png){:width="50%"}
+![Single particle example](/uploads/images/2018/MDSimulation1.png){:width="75%"}
 
 For a single particle in a chamber, two degree of freedom $ x_1 = x, x_2 = y$, the kinetic energy is:
 
@@ -66,9 +66,9 @@ $$ \displaystyle x(0) = -3nm, \dot{x}(0) = 10nm/s, y(0) = 5nm, \dot{y}(0) = 20nm
 
 Using Mathematica ([MDSimulation1.nb](/uploads/files/2018/MDSimulation1.zip)) to plot the trajectory or use this script ([MDSimulation2.nb](/uploads/files/2018/MDSimulation2.zip)) to plot the animation,
 
-![Trajectory](/uploads/images/2018/MDSimulation2.png){:width="50%"}
+![Trajectory](/uploads/images/2018/MDSimulation2.png){:width="75%"}
 
-![Animation](/uploads/images/2018/MDSimulation3.gif){:width="50%"}
+![Animation](/uploads/images/2018/MDSimulation3.gif){:width="75%"}
 
 ### Lennard-Jones potential function
 
@@ -80,13 +80,13 @@ where: $ \varepsilon$ denotes the depth of the energy well, and $ \sigma$ denote
 
 Take $ \sigma = 3, \varepsilon = 0.2$, the result is shown below,
 
-![Potential](/uploads/images/2018/MDSimulation4.png){:width="50%"}
+![Potential](/uploads/images/2018/MDSimulation4.png){:width="75%"}
 
 As mentioned before, the derivative of $ U$ with respect to $r$ is the force. The force from Lennard-Jones interaction is simply get the derivative of $ U$:
 
 $$ \displaystyle F=-U^{\prime}(r_{ij}) = -4 \varepsilon \left(\frac{6 \sigma ^6}{r^7}-\frac{12 \sigma ^{12}}{r^{13}}\right) $$
 
-![Potential](/uploads/images/2018/MDSimulation5.png){:width="50%"}
+![Potential](/uploads/images/2018/MDSimulation5.png){:width="75%"}
 
 The equilibrium distance between two atoms is the position $ F=0$.
 
@@ -118,5 +118,5 @@ $$ \displaystyle \frac{\partial W_{LJ-ijk}}{\partial x_{jk}} = 4 \varepsilon \l
 
 With these two equations, we can simply calculate the motion of these two particles,
 
-![Two particles example](/uploads/images/2018/MDSimulation6.gif){:width="50%"}
+![Two particles example](/uploads/images/2018/MDSimulation6.gif){:width="75%"}
 

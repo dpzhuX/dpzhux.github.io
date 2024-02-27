@@ -31,7 +31,7 @@ ListAnimate[vIn1]
 The last line uses the "ListAnimate" command to generate a generate animation in Mathematica,
 
 
-![MMA](/uploads/images/2020/CrackTipTrajectory1.jpg)
+![MMA](/uploads/images/2020/CrackTipTrajectory1.jpg){:width="75%"}
 
 Then, the tracking frame should be set according to the animation, in this example, the crack has a jump in 28th to 29th frame, so the frame number 29 should be used. At the end of the simulation, the crack becomes much more width,  so I select more frames here,
 
@@ -42,7 +42,7 @@ vIn1[[#]] & /@ trackFrame
 
 The 1st, 29th, 38th, 42nd are shown to select the feature points here. Right-click the image and select Get Coordinates tool in the menu and pick the feature points on the image. Then use "Edit"->"Copy" to copy the coordinates. Since we chose four frames for tracking, four crack-tip feature points should be chosen. The following figure shows the point that I chose in the 29th frame.
 
-![MMA](/uploads/images/2020/CrackTipTrajectory2.jpg)
+![MMA](/uploads/images/2020/CrackTipTrajectory2.jpg){:width="75%"}
 
 Paste the coordinates into the following code,
 
@@ -101,7 +101,7 @@ ListLinePlot[rST2, Mesh -> All]
 
 To calculate the real coordinates, I use the coordinates of two points. "realCoord" stores the real coordinates in the model, and "imgCoord" stores the coordinates in the image at the same model position. The result will be saved in rST2. Two list plots will be drawn to compare the coordinates,
 
-![MMA](/uploads/images/2020/CrackTipTrajectory4.png)
+![MMA](/uploads/images/2020/CrackTipTrajectory4.png){:width="75%"}
 
 The first figure is about the image coordinates and the second figure is the real coordinates in the model. Then, we export the animation.
 

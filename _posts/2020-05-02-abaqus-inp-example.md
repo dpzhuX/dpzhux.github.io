@@ -11,9 +11,9 @@ An example to show the inp file structure. The example demonstrates the stretch 
 
 <!-- more -->
 
-![Example](/uploads/images/2020/AbaqusSquareInp1.png)
+![Example](/uploads/images/2020/AbaqusSquareInp1.png){:width="75%"}
 
-![Example](/uploads/images/2020/AbaqusSquareInp2.png)
+![Example](/uploads/images/2020/AbaqusSquareInp2.png){:width="75%"}
 
 The inp file is shown below,
 

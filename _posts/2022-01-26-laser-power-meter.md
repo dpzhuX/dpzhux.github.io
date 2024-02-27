@@ -33,7 +33,7 @@ Here are the webserver screenshots. Since the AP mode does not connect to the re
 
 The following section describes the calibration details. The photodiode calibration is based on the datasheet of SFH 206 K. The datasheet shows that the spectral sensitivity of the photodiode at 850 nm is 0.62 A/W. Also, the datasheet provides the relative spectral sensitivity curve, as shown below. Therefore, the sensitivity for each wavelength can be calculated.
 
-![Sensitivity curve](/uploads/images/2022/LaserPowerMeter7.jpg)
+![Sensitivity curve](/uploads/images/2022/LaserPowerMeter7.jpg){:width="75%"}
 
 I extract the data from the relative sensitivity curve and obtain the specific value at each wavelength.
 

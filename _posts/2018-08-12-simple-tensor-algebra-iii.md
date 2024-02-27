@@ -13,7 +13,7 @@ Previously, the vector space $\mathbb{V}$ and three vector product operations we
 
 So, what is a tensor? The following figure shows a tensor in a 2D Cartesian coordinate system.
 
-![Tensor](/uploads/images/2018/SimpleTensorAlgebraIII1.png)
+![Tensor](/uploads/images/2018/SimpleTensorAlgebraIII1.png){:width="75%"}
 
 The vector is a tensor, and it is a first-order (1st-order) tensor. Actually, the scalar is a tensor as well, we can consider the scalar as a zeroth-order (0th-order) tensor.
 

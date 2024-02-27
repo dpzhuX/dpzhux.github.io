@@ -106,7 +106,7 @@ Every set of linearly independent vectors in Euclidean space $ \mathbb{E}^n$ can
 
 The dual basis of vectors is a biorthogonal system of the original basis of vectors in vector space $ \mathbb{V}$, the detail information can be found in [wikipedia](https://en.wikipedia.org/wiki/Dual_basis). It is a little bit abstract, the following figure shows the original basis $ \{ \boldsymbol{g}_1, \boldsymbol{g}_2 \}$ and the dual basis $ \{ \boldsymbol{g}^1, \boldsymbol{g}^2 \}$ in 2D Euclidean space $ \mathbb{E}^2$.
 
-![Dual basis](/uploads/images/2018/SimpleTensorAlgebraI1.png)
+![Dual basis](/uploads/images/2018/SimpleTensorAlgebraI1.png){:width="75%"}
 
 In this figure, $ \boldsymbol{g}_i \cdot \boldsymbol{g}^j = \delta_i^j$. Now, extend the 2D Euclidean space $ \mathbb{E}^2$ to nD Euclidean space $ \mathbb{E}^n$, the basis $ \mathcal{G}^ \prime = \{\boldsymbol{g}^1, \boldsymbol{g}^2, \boldsymbol{g}^3, \dots,\boldsymbol{g}^n \}$ is the dual basis to the basis $ \mathcal{G} = \{\boldsymbol{g}_1, \boldsymbol{g}_2, \boldsymbol{g}_3, \dots,\boldsymbol{g}_n \}$, if that,
 

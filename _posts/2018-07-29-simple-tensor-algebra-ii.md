@@ -150,7 +150,7 @@ The rotation operation of a vector is a typical example to show the usage of vec
 
 $$\displaystyle {\bf R} = \cos \alpha \; {\bf I} + (1 - \cos \alpha) {\boldsymbol p} \otimes {\boldsymbol p} - \sin \alpha \; {\hat {\boldsymbol p}} \qquad (1)$$
 
-![Rotation](/uploads/images/2018/SimpleTensorAlgebraII1.png)
+![Rotation](/uploads/images/2018/SimpleTensorAlgebraII1.png){:width="75%"}
 
 To get such result, we first construct a local coordinate system. Denote $ \boldsymbol x,\boldsymbol y,\boldsymbol z$ are the bases of the Cartesian coordinate system as shown in the figure. $ \boldsymbol g_1$ is a unit vector that aligns with vector $ \boldsymbol b$, $\boldsymbol g_3 $ is a unit vector that aligns with vector $ \boldsymbol p$. Then, the last unit vector can be expressed by $\boldsymbol g_2 = \boldsymbol g_3 \times \boldsymbol g_1$. The position of vector $\boldsymbol r$ rotates to the position $ \boldsymbol r(\alpha)$ with a rotation angle $ \alpha$ about the axis $ \boldsymbol p$. First, the vector $ \boldsymbol r$ can be written by,
 
