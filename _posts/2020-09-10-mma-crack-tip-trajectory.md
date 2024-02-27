@@ -1,6 +1,6 @@
 ---
 title: Mathematica crack tip trajectory
-date: 2020-05-02 17:34:05
+date: 2020-09-10 17:34:05
 categories:
 - Explorations
 tags:
