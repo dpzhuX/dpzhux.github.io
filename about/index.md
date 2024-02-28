@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 type: about
 title: About
 ---
