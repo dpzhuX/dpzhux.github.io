@@ -1,5 +1,5 @@
 ---
-title: GDB Cheat Sheet
+title: GDB cheat sheet
 categories:
 - Notes
 tags:
