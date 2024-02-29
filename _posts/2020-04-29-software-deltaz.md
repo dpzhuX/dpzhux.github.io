@@ -73,7 +73,7 @@ The last "Advance" tab can be used to generate the waveform with math expression
 
 ---
 
-### Disclaimer###
+### Disclaimer
 
 ![DeltaZ](/uploads/images/2020/SoftwareDeltaZ15.png)
 

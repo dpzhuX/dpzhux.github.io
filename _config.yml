@@ -568,7 +568,7 @@ calendar:
   orderBy: startTime
   offsetMax: 24
   offsetMin: 4
-  timeZone:
+  timeZone: America/New_York
   showDeleted: false
   singleEvents: true
   maxResults: 250
