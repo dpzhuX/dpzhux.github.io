@@ -9,6 +9,8 @@ tags:
 
 The Drucker-Prager (DP) material model in Ansys is a non-metallic material model that can consider volume expansion caused by yielding. Thus, it is suitable for simulating granular materials with friction, concrete, rocks, etc. Unlike metallic materials, the DP material model can use both associated and non-associated flow rules. However, the DP material does not have a hardening rule and its yield surface expands with an increase in hydrostatic pressure, exhibiting ideally elastic-plastic behavior. The equivalent stress for the DP model is defined by the following equation,
 
+<!-- more -->
+
 $${\sigma _e} = 3\beta {\sigma _m} + {\left[ {\frac{1}{2}{\left\{ s \right\}^T}\left[ M \right]\left\{ s \right\}} \right]^{\frac{1}{2}}}
 $$
 
@@ -18,17 +20,17 @@ The DP material's yield criterion can be rewritten as follows,
 
 $$F = 3\beta {\sigma _m} + {\left[ {\frac{1}{2}{\left\{ s \right\}^T}\left[ M \right]\left\{ s \right\}} \right]^{\frac{1}{2}}} – {\sigma _y}$$
 
-Where $β$ and $$ are defined by,
+Where $β$ and $\sigma_y$ are defined by,
 
-$$\beta  = \frac{2\sin \phi }{\sqrt 3 (3 – sin\phi )}$$
+$$\beta  = \frac{2\sin \phi }{\sqrt 3 (3 – \sin\phi )}$$
 
-$${\sigma _y} = \frac{6c\cos \phi }{\sqrt 3 (3 – sin\phi )}$$
+$${\sigma _y} = \frac{6c\cos \phi }{\sqrt 3 (3 – \sin\phi )}$$
 
 Here, $\phi$ is the internal friction angle; $c$ is the cohesion. If there are uniaxial tensile ${\sigma _t}$ and compressive ${\sigma _c}$ as yield stresses from raw data, they can be converted as follows,
 
 $$\begin{array}{cc} 
 {\phi  = {\sin }^{ – 1}\left( {\frac{3\sqrt 3 \beta }{2 + \sqrt 3 \beta }} \right)}\\ 
-{c = \frac{\sigma_y \sqrt 3 (3 – sin\phi )}{6\cos \phi }} 
+{c = \frac{\sigma_y \sqrt 3 (3 – \sin\phi )}{6\cos \phi }} 
 \end{array} \to \begin{array}{cc} 
 {\beta  = \frac{\sigma_c – {\sigma _t}}{\sqrt 3 \left( {\sigma_c + {\sigma _t}} \right)}}\\ 
 {\sigma_y = \frac{2{\sigma _c}{\sigma _t}}{\sqrt 3 \left( {\sigma_c + {\sigma _t}} \right)}} 
