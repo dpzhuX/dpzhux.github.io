@@ -17,7 +17,7 @@ After welding, the initial temperature of the plate is 800°C. The plate is plac
 
 The material properties are as shown in the following table (Click to [DOWNLOAD](/uploads/files/2015/AnsysThermalExpansion.xlsx) the table):
 
-![Model](/uploads/images/2015/AnsysThermalExpansionE1.png){:width="75%"}
+![Model](/uploads/images/2015/AnsysThermalExpansionE1.png)
 
 For this type of thermal analysis, this article selects PLANE13 and SOLID5 thermal-stress coupling elements. The steel material settings are as follows,
 
