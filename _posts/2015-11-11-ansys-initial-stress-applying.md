@@ -73,3 +73,5 @@ After solving the model, the equivalent stress distribution is obtained as follo
 ![Results](/uploads/images/2015/AnsysInitialStress5.png)
 
 By comparing the final contour distributions from both analyses, we can find they show the same results, indicating the correct application of initial stresses.
+
+> The model is a test model, and the APDL code is available upon request.
