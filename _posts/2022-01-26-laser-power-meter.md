@@ -1,5 +1,5 @@
 ---
-title: Homemade Laser Power Meter
+title: Homemade laser power meter
 date: 2022-01-26 19:46:55
 categories:
 - Projects
