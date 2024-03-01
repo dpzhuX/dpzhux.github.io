@@ -1,5 +1,5 @@
 ---
-title: Ansys constraint equations applying
+title: Ansys constraint equations analysis
 date: 2015-11-15 22:34:23
 categories:
 - Explorations

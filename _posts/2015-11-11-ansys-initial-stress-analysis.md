@@ -1,5 +1,5 @@
 ---
-title: Ansys initial stress applying
+title: Ansys initial stress analysis
 date: 2015-11-11 23:43:20
 categories:
 - Explorations
