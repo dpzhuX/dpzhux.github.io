@@ -7,7 +7,8 @@ tags:
 - Tutorials
 ---
 
-![VSCode](/uploads/images/0000/VSFortran.jpg)
+![VSFortran](/uploads/images/0000/VSFortran.jpg)
+
 Despite Fortran being an ancient language, its still comes with its own set of advantages. Recently, while debugging Abaqus subroutines, I have to repeatedly running code for testing. Although the integration with Abaqus is necessary for running the entire code, the individual modules can still be tested separately. The best method for testing modules is to run them as small, standalone programs. However, VS Code does not seem to support running Fortran code directly. A useful plugin for this purpose is [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner), but unfortunately, it doesn't support Fortran by default and requires some adjustments. First, let's start with a test code.
 
 <!-- more -->
