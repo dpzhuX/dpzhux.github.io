@@ -7,6 +7,7 @@ tags:
 - Snippets
 ---
 
+![Snippet](/uploads/images/0000/Snippet.jpg)
 This snippet demonstrates the polt format that I often used in Wolfram Mathematica.
 
 <!-- more -->

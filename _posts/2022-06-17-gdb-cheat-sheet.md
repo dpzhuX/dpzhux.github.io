@@ -7,6 +7,7 @@ tags:
 description: The command for GDB debug
 ---
 
+![Snippet](/uploads/images/0000/Snippet.jpg)
 ```bash
 # Start GDB with a core file
 gdb program corefile

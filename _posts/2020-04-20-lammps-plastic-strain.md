@@ -7,6 +7,7 @@ tags:
 - LAMMPS
 ---
 
+![LAMMPS](/uploads/images/0000/LAMMPS.jpg)
 This post provides the approach to extract the plastic strain in MD simulation. We can compute the atom displacement as the trajectory from the MD simulation, but the strain is the concept in continuum mechanics, it is really hard to compute the tensor in a discrete system. Recently, some tools provide this function based on a theory that accounting the effects of the neighbor atoms. While considering the relative displacement with the neighbor atom and using the weight function, the deformation gradient tensor can be calculated. Therefore, the strain tensor is obtained. Plastic strain can be expressed as,
 
 <!-- more -->

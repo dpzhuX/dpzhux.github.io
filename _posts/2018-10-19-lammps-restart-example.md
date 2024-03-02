@@ -7,6 +7,7 @@ tags:
 - LAMMPS
 ---
 
+![LAMMPS](/uploads/images/0000/LAMMPS.jpg)
 LAMMPS has the capability to restart the job from the binary file. According to the description from the official website, the command restart can write out a binary restart file with the current state of the simulation every certain timestep. This command has two modes: write the binary file or the data file. If you wish to use the data file, then a convert command is needed in this scenario. Here we do not consider the data file.
 
 <!-- more -->

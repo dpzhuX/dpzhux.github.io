@@ -8,6 +8,7 @@ tags:
 description: The configuration for tmux
 ---
 
+![Snippet](/uploads/images/0000/Snippet.jpg)
 ```bash
 bind h select-pane -L
 bind j select-pane -D
