@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 Now, consider a flat plate composed of two materials, steel on the left side and iron on the right, then they are welded together in the middle with copper. The dimensions of the plate are 1×1×0.2m, with the cross-sectional area as shown in the following figure,
 
 <!-- more -->

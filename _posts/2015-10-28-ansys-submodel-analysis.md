@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 When finite element models are large, analysis on a standard computer can become challenging. Typically, the model is divided into coarser meshes in such cases, but this comes at the cost of losing analysis precision. When accurate local results are needed for a model's specific area, the options are either to refine the mesh locally or to use submodel analysis techniques. The former has a significant drawback, mainly because even coarsely divided large models require considerable computational effort. Refining the mesh locally undoubtedly increases the computational load. 
 
 <!-- more -->

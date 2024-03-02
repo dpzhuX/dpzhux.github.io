@@ -7,6 +7,7 @@ tags:
 - Snippets
 ---
 
+![SIMULIA](/uploads/images/0000/SIMULIA.jpg)
 An example to show the inp file structure. The example demonstrates the stretch of a square plate with the dimension $1 \times 1 \mathrm{m^2}$. The plate material is steel with elastic stiffness of $2.1 \times 10^{11} \mathrm{MPa}$. The material density is $7800 \mathrm{kg/m^3}$. The left boundary is fixed and $0.1 \mathrm{m}$ displacement is applied to the right boundary. The plane strain is assumed in the model. Here are the model and the simulation results.
 
 <!-- more -->

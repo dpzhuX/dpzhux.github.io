@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 I was interested in performing finite element analysis of uniformly loaded concrete beams but did not start due to the complexity of choosing appropriate material and load parameters. Recently, there exists an example that seemed perfect for practice. The subject of analysis is a concrete beam with a length of 3m and cross-sectional dimensions of 0.1×0.2m. To simplify the model, the concrete protective layer on the bottom and sides is not considered. The beam is reinforced at the bottom with two 20mm diameter steel rebars, treated as elastic and without accounting for elastoplastic behavior. 
 
 <!-- more -->

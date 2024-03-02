@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 During analysis, we often encounters complex boundary conditions that vary with time, coordinates, temperature, and other factors. Therefore, it is not feasible to apply a general loading method to impose loads on structures, such as loads that change with spatial location or convective boundaries in thermal convection analysis that vary with coordinate position.
 
 <!-- more -->

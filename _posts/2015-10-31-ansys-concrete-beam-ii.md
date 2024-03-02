@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 In previous post, the work with Ansys on calculating reinforced concrete beams was overly simplistic. It involved just two rebars modeled as elastic bodies and a rather straightforward set-up for the concrete parameters, which do not require the adjustment of solver convergence criteria to achieve convergence. Hence, I've decided to develop a more complex model, based on a model in a book on advanced finite element analysis methods and examples, where I've also corrected some minor issues presented.
 
 <!-- more -->

@@ -7,6 +7,7 @@ tags:
 - Abaqus
 ---
 
+![SIMULIA](/uploads/images/0000/SIMULIA.jpg)
 While Abaqus is a great program, its modeling capabilities, like those of many other finite element analysis (FEA) software, can be somewhat limited. Therefore, to enhance the applicability of Abaqus, it is often necessary to utilize external CAD programs for modeling. Once the modeling is complete, the model can be imported into Abaqus for analysis.
 
 <!-- more -->

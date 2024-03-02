@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 During structural analysis, it is common to use multiple types of elements together. This leads to issues related to the connection between elements. General elements like beams, shells, and solid elements usually connect via shared nodes. However, due to the differences in degrees of freedom (DOF) between elements, such connections might not yield the desired results and can even lead to issues that prevent model convergence. Thus, it is necessary to create "compatibility conditions" between different elements.
 
 <!-- more -->

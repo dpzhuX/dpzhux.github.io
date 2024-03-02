@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 I have worked on several concrete analysis cases and I found that it is possible to establish a refined model of concrete, including models for concrete aggregates and mortar. This is quite interesting. So, I searched online and discovered many papers and studies on this topic. I also realized that the random generation of concrete aggregates indeed involves certain techniques. After reviewing some papers, I found that the random generation of aggregates mainly relies on coding skills. To achieve the required aggregate gradation, various "advanced methods" can be added to the generation algorithm, such as using the Monte Carlo method to generate graded concrete aggregate models, as well as generating irregular aggregates.
 
 <!-- more -->

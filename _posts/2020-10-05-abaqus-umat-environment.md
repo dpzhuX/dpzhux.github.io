@@ -7,6 +7,7 @@ tags:
 - Abaqus
 ---
 
+![SIMULIA](/uploads/images/0000/SIMULIA.jpg)
 During the subroutine environment setup, a lot of problems need to be solved. A typical problem is shown as following,
 > The job input file "Job-1.inp" has been submitted for analysis. Job Job-1: Analysis Input File Processor aborted due to errors. Error in job Job-1: Analysis Input File Processor exited with an error.
 

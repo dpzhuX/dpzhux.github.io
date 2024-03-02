@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 This article analyzes a tapered collet in operation. Tapered collets are commonly used mechanical devices that employ sleeve compression to clamp workpieces. This involves friction between the sleeve and the clamp, as well as between the clamp and the workpiece. The frictional force can be determined when the workpiece is pulled. This provides insight into the load-bearing capacity of the entire mechanical assembly. A cross-sectional view of the model is illustrated below,
 
 <!-- more -->

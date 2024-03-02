@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 In practical analyses, nonlinear contact between structures or components is frequently encountered. Contact problems, a type of nonlinear behavior, often require significant computational resources. To conduct a analysis, it is essential to establish an effective model. Setting up contact analyses in Ansys typically involves two main issues:
 
 <!-- more -->

@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 When conducting structural analysis in Ansys, modal analysis often does not consider the external loads applied to the model. Even when prestress is applied, Ansys usually does not consider the effect of prestress, which does not match the actual situation. Therefore, it is necessary to enable the prestress effects in the analysis to obtain more accurate results.
 
 <!-- more -->

@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 In analysis, applying complex surface load might be involved, such as tangential surface load or load at a certain angle. Ansys can only apply surface load perpendicular to the surface. This can cause the issue for controlling angles. On the other hand, when the magnitude of the surface load varies with location, it is difficult to apply such surface load.
 
 <!-- more -->

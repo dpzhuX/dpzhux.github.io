@@ -7,6 +7,7 @@ tags:
 - Abaqus
 ---
 
+![SIMULIA](/uploads/images/0000/SIMULIA.jpg)
 In Abaqus, the default UMAT subroutines are written in Fortran, with a .for file extension, and are compiled and linked into the simulation during running model. However, if there exists a need to compile the subroutine ahead of time or to protect the source code, the .for file can be compiled into an .obj binary file.
 
 <!-- more -->

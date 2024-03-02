@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 In steel structure design, the calculation of component stability is more crucial than the calculation of component strength. Linear buckling analysis tends to be conservative, thus solely conducting a linear eigenvalue analysis is insufficient now. To achieve results closer to real-world engineering scenarios, it is essential to perform nonlinear buckling analysis. In Ansys, the STATIC analysis combined with the application of the arc-length method enables a comprehensive buckling analysis of the component throughout the buckling process.
 
 <!-- more -->

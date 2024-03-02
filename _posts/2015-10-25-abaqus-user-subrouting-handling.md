@@ -7,6 +7,7 @@ tags:
 - Abaqus
 ---
 
+![SIMULIA](/uploads/images/0000/SIMULIA.jpg)
 After reviewing numerous posts on Abaqus subroutines, I found the information online to be disorganized. Here, I put a post to summarize some fundamental approaches for future reference.
 
 1. **Compatibility between Abaqus, Intel Visual Fortran (IVF), and Visual Studio (VS)** can be given through the following compatibility tables:

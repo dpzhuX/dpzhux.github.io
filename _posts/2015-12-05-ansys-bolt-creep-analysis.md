@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 Creep is a typical nonlinearity problem due to material. For such problem, it is necessary to understand the material properties and correctly setting the material related attributes. In Ansys, setting up creep behavior involves activating the material's Creep option and assigning it elastic properties. This post analyzes a bolt in operation, with a length of 200mm and a cross-sectional area of 150mm^2, continuously working at 800°C. The goal is to analyze the internal stress evolution/condition of the bolt, as shown in the model below,
 
 <!-- more -->

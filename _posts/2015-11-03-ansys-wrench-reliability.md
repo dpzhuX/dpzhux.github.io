@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 This post conducts a reliability analysis on a wrench in practical use via Ansys. Reliability analysis is a statistical method used to study the ability of a system or component to perform its required functions under stated conditions for a specified period of time. It's fundamentally concerned with the assessment and prediction of product lifespan and identifying the likelihood of failures. The goal of reliability analysis is to identify areas of improvement in the design, manufacturing, and operational processes to enhance the overall dependability of products or systems. 
 
 <!-- more -->

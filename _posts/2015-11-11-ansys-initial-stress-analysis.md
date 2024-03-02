@@ -7,7 +7,7 @@ tags:
 - Ansys
 ---
 
-
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 Previously, when I analyzed a steel structure with residual stress, it is difficult to apply residual stresses correctly and could not identify the problem until I came across a case study on applying residual stresses. In Ansys, initial stresses can be considered as a load but are only applicable in static and transient analyses. Constant initial stresses can be applied using the ISTRESS command.
 
 <!-- more -->

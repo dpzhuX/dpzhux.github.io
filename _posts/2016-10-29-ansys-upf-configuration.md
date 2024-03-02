@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 When working with Ansys, there may be situations where the available materials or element models are insufficient for our needs, Then, we need to do custom development. However, setting up the environment for custom development is the first challenge in the development process. It is recommended to configure the Ansys UPF development environment on a newly installed system. My personal experience was that after configuring the environments for ABAQUS and MARC on my computer, attempting to set up the Ansys development environment led to numerous strange behaviors and difficult-to-resolve LINK errors. Fortunately, after reinstalling my computer and removing ABAQUS and MARC, I decided to configure the Ansys development environment.
 
 <!-- more -->

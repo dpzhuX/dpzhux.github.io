@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 Beam elements are recognized for their simplicity and efficiency, making them widely used in finite element analysis, especially within structural engineering. Utilizing beam elements avoids the requirement to model all components as solid elements, thereby reducing computational effort. Beam elements provide a straightforward structural format with relatively high accuracy. In Ansys, beam elements are generally classified into linear and quadratic elements, with different computational theories. The integration points for the classic quadratic element, BEAM189, are shown in the following image:
 
 <!-- more -->

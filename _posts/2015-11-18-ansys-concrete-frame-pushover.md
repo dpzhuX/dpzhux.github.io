@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 In structural engineering, Ansys is predominantly used for elastic analysis or elastic-plastic analysis of steel structures. However, when dealing with reinforced concrete frames, Ansys sometimes has issues, primarily because the concrete material in Ansys is intended to be used with the SOLID65 element. While most building structures consist of frames, simulating all elements/frames of a structure with SOLID65 requires substantial computational cost and also poses a convergence challenge. 
 
 <!-- more -->

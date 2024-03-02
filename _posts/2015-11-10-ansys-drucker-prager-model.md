@@ -7,6 +7,7 @@ tags:
 - Ansys
 ---
 
+![ANSYS](/uploads/images/0000/ANSYS.jpg)
 The Drucker-Prager (DP) material model in Ansys is a non-metallic material model that can consider volume expansion caused by yielding. Thus, it is suitable for simulating granular materials with friction, concrete, rocks, etc. Unlike metallic materials, the DP material model can use both associated and non-associated flow rules. However, the DP material does not have a hardening rule and its yield surface expands with an increase in hydrostatic pressure, exhibiting ideally elastic-plastic behavior. The equivalent stress for the DP model is defined by the following equation,
 
 <!-- more -->
