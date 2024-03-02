@@ -1,6 +1,6 @@
 ---
 title: Abaqus accelerating explicit analysis 
-date: 2016-10-29 15:07:53
+date: 2019-03-28 21:51:23
 categories:
 - Explorations
 tags:
