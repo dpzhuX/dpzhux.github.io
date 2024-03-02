@@ -1,5 +1,5 @@
 ---
-title: Ansys thin shell buckling
+title: Ansys thin shell buckling analysis
 date: 2015-11-24 13:40:32
 categories:
 - Explorations
