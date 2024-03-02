@@ -19,7 +19,12 @@ The software is compatible with Windows (x32, x64) platforms: [DOWNLOAD](https:/
 
 The following two animations show the basic functionalities of this software,
 
+#### Show stress contour
+
 ![Usage](/uploads/images/2017/SoftwareOpsview1.gif)
+
+#### Show real-time deformation
+
 ![Usage](/uploads/images/2017/SoftwareOpsview2.gif)
 
 > Real-time model deformation display initiates the network module to listen to OpenSees output, which may trigger alerts from Windows or other security software. Please authorize these alerts.
