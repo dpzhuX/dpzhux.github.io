@@ -7,6 +7,7 @@ tags:
 - Notes 
 ---
 
+![Notes](/uploads/images/0000/Notes.jpg)
 The vector space $ \mathbb{V}$ is introduced in Simple tensor algrbra I, several rules are provided in it. To reduce the abstract, we represent the vectors $ \boldsymbol{x}, \boldsymbol{y}$ with the scalar coefficients $ ({x_1},{x_2},{x_3})$ and $ ({y_1},{y_2},{y_3})$ in $ \mathbb{E}^3$, respectively. The composition of two vectors $ \boldsymbol{x}, \boldsymbol{y} \in\mathbb{E}^3$ is expanded by,
 
 <!-- more -->

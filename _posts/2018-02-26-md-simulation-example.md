@@ -2,11 +2,12 @@
 title: An example of MD simulation
 date: 2018-02-26 12:13:23
 categories:
-- Explorations
+- Notes
 tags:
-- Dynamics
+- Notes
 ---
 
+![Notes](/uploads/images/0000/Notes.jpg)
 This is a homework of computational nanomechanics. The basic requirement is to use the Lagrangian function to describe the motion of particles. In homework, it requires 5 particles. As an enhancement, I rewrote the code with Qt and use GNU Scientific Library(GSL) to finish the task.
 
 <!-- more -->

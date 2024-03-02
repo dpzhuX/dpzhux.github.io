@@ -7,6 +7,7 @@ tags:
 - Notes 
 ---
 
+![Notes](/uploads/images/0000/Notes.jpg)
 Previously, the vector space $\mathbb{V}$ and three vector product operations were considered in Simple tensor algebra I and Simple tensor algebra II. But we do not talk much about the tensor. Here, the tensor will be introduced.
 
 <!-- more -->

@@ -5,10 +5,13 @@ categories:
 - Snippets
 tags:
 - Snippets
-description: The configuration for tmux
 ---
 
 ![Snippet](/uploads/images/0000/Snippet.jpg)
+The configuration for tmux
+
+<!-- more -->
+
 ```bash
 bind h select-pane -L
 bind j select-pane -D

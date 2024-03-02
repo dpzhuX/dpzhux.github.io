@@ -7,6 +7,7 @@ tags:
 - Notes 
 ---
 
+![Notes](/uploads/images/0000/Notes.jpg)
 The vector space $ \mathbb{V} $ with the operation (+) over a field of real number $ \mathbb{R} $ is an abelian group with a scalar multiplication. So, suppose $  \boldsymbol{x} $, $ \boldsymbol{y} $ and $ \boldsymbol{z} \in \mathbb{V}$, they satisfy the following conditions:
 
 <!-- more -->

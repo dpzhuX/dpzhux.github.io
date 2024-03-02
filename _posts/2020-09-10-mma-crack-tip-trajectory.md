@@ -7,6 +7,7 @@ tags:
 - Mathematica
 ---
 
+![Mathematica](/uploads/images/0000/Mathematica.jpg)
 This post focuses on the crack tip tracking method. While I simulate several fatigue models, the crack tip trajectories are hard to track in the model. Previously, I just picked some points and decided on the crack length and rate in several images. This useful method is not very effective when I get several video clips in a crack place. Several image process tools such as Fiji can deal with the image fast and easily, but I still feel it is hard to realize my goal. So I try to write a simple tool to achieve the object. Since tracking the crack tip uses the technique of image processing, I use Mathematica for this purpose.
 
 <!-- more -->

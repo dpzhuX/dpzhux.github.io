@@ -7,6 +7,7 @@ tags:
 - Notes 
 ---
 
+![Notes](/uploads/images/0000/Notes.jpg)
 Here is my notes about the calculus of variations that deals with optimizing functionals, which are mappings from a set of functions to the real numbers. It involves finding a function that minimizes or maximizes a given functional, often subject to certain constraints. This field has applications in various areas, including physics, engineering, and economics, by providing a systematic way to deal with optimization problems where the quantity to be optimized is dependent on a function.
 
 <!-- more -->

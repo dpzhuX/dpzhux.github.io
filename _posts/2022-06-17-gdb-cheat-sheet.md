@@ -4,10 +4,13 @@ categories:
 - Snippets
 tags:
 - Snippets
-description: The command for GDB debug
 ---
 
 ![Snippet](/uploads/images/0000/Snippet.jpg)
+The command for GDB debug
+
+<!-- more -->
+
 ```bash
 # Start GDB with a core file
 gdb program corefile
