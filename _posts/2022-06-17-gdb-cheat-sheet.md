@@ -1,5 +1,5 @@
 ---
-title: GDB cheat sheet
+title: Snippet GDB cheat sheet
 categories:
 - Snippets
 tags:

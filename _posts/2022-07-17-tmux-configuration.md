@@ -1,5 +1,5 @@
 ---
-title: Tmux configuration
+title: Snippet Tmux configuration
 date: 2022-07-17 17:41:00
 categories:
 - Snippets
