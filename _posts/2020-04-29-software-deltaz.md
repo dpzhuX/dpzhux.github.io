@@ -1,5 +1,5 @@
 ---
-title: Software DeltaZ
+title: Software DeltaZ - Arbitrary waveform for RIGOL
 date: 2020-04-29 15:17:24
 categories:
 - Software
@@ -10,8 +10,9 @@ tags:
 DeltaZ is a software to edit the arbitrary waveform on RIGOL DG800/900 series. I write some scripts to control my RIGOL DG812. Finally, I decided to pack the scripts and wrote a user interface to control the device. That is DeltaZ. Click the "DOWNLOAD" button to download the software.
 
 <!-- more -->
+### Download and Installation
 
-[**DOWNLOAD**](https://drive.google.com/open?id=1fDOUm-WPANBxhBmnHLgFACJIeN2Kiirp)
+The software is compatible with Windows (x32, x64) platforms: [**DOWNLOAD**](https://drive.google.com/open?id=1fDOUm-WPANBxhBmnHLgFACJIeN2Kiirp)
 
 
 ### NI-VISA installation
