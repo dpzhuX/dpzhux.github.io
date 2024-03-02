@@ -8,9 +8,11 @@ title: About
 
 Dongping Zhu, Ph.D.
 
-### Contact
+### Status
 
-Feel free to reach out by email:
+<div align="justify">As of 2024, I am in the process of integrating all my previous posts into this blog. They will be published here gradually.</div>
+
+### Contact
 
 *Email: dpzhu.me#gmail.com (Replace # with @)*
 
