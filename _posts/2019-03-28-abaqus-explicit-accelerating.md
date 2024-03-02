@@ -4,7 +4,7 @@ date: 2016-10-29 15:07:53
 categories:
 - Explorations
 tags:
-- Ansys
+- Abaqus
 ---
 
 Working with Abaqus explicit calculations recently, I encountered a common issue: the model and materials were fine, and calculations were possible, but the computation speed was extremely slow. With the stable time increment step at the magnitude of $10^{-7}$, even simulating just one second could require thousands of hours of computation, which is impractical. After studying various sources, I've summarized methods to accelerate Abaqus explicit calculations.
