@@ -4,7 +4,7 @@ date: 2018-03-25 13:50:12
 categories:
 - Tutorials
 tags:
-- General
+- Tutorials
 ---
 
 This marks my second attempt at compiling VTK on a Mac. A month ago, I invested considerable time figuring out how to compile it using CMake and eventually succeeded. However, it's surprisingly easy to forget the steps involved. To prevent that from happening again, I'm documenting the entire compilation process here.
