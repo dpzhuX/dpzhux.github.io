@@ -2,9 +2,9 @@
 title: Tmux configuration
 date: 2022-07-17 17:41:00
 categories:
-- Notes
+- Snippets
 tags:
-- Notes
+- Snippets
 description: The configuration for tmux
 ---
 
