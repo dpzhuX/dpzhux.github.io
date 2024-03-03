@@ -169,4 +169,4 @@ if __name__ == '__main__':
         print('=============================================')
 ```
 
-> The function main does not provide in this post due to the verbose code,  it is available upon request.
+> All source code is available upon request.

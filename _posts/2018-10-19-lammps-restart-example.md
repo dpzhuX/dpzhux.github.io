@@ -136,4 +136,4 @@ dump 1 all custom 100 tension_restart.lammpstrj id type x y z
 run 2000
 ```
 
-> Full script files are available upon request.
+> All source code is available upon request.
