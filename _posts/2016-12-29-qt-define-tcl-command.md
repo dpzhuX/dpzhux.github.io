@@ -1,5 +1,5 @@
 ---
-title: Qt C++ custom Tcl Commands
+title: Qt C++ custom Tcl commands
 date: 2016-12-29 16:57:12
 categories:
 - Tutorials
