@@ -1,5 +1,5 @@
 ---
-title: Compiling OpenCV for minGW with Qt 5.7
+title: Qt 5.7 OpenCV compiling for minGW 
 date: 2017-01-07 15:55:21
 categories:
 - Tutorials
