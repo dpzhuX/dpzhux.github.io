@@ -31,7 +31,7 @@ Implementation code,
 """
 Created on Fri Nov 18 18:49:08 2016
 
-@author: dpzhu
+@author: Orycho
 """
 import numpy as np
 from matplotlib.lines import Line2D
@@ -103,7 +103,7 @@ The code utilizes a generator to produce frames, with a sampling interval of 100
 """
 Created on Fri Nov 18 18:49:08 2016
 
-@author: dpzhu
+@author: Orycho
 """
 import numpy as np
 from matplotlib.lines import Line2D
