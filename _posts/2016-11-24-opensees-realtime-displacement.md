@@ -17,7 +17,7 @@ Since a loop is created to listen on a TCP port, it is necessary to use Python s
 
 Let's plot the flowchart for real-time model display,
 
-![OpenSees realtime displacement](/uploads/images/2016/OpenseesRealtimeDisplacement2.gif)
+![OpenSees realtime displacement](/uploads/images/2016/OpenseesRealtimeDisplacement2.png)
 
 Before starting the plotting, it is necessary to add the following statement in the OpenSees model,
 
