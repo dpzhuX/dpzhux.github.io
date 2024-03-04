@@ -1,5 +1,5 @@
 ---
-title: VS Code compile and run Fortran
+title: VS Code Fortran configuration
 date: 2019-03-23 23:46:23
 categories:
 - Tutorials
