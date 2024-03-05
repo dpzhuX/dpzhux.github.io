@@ -14,9 +14,7 @@ Dongping Zhu, Ph.D.
 
 ### Contact
 
-Feel free to reach out by email:
-
-*Email: dpzhu.me#gmail.com (Replace # with @)*
+Feel free to reach out by email: **dpzhu.me#gmail.com (Replace # with @)**
 
 <div align="justify">To ensure a timely and relevant response, please include a brief introduction about yourself in your email. This may cover who you are, your institution (if applicable), and the specific purpose of your request or inquiry. I strive to respond to all emails promptly, and including these details upfront in the email is greatly appreciated.</div>
 

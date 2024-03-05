@@ -10,6 +10,8 @@ tags:
 ![Cypress](/uploads/images/0000/Cypress.jpg)
 The OpenSees official website recently posted a message about the launch of a new editor called Cypress Editor, which can be directly accessed from the [official website](http://cypress.hrshojaie.com/en-us/default.aspx). I immediately downloaded this software. The official webpage of this software is impressively designed. This make this editor seem decades ahead compared to the OpenSees official website.
 
+<!-- more -->
+
 The installation process is straightforward: download and install,
 
 ![Cypress editor](/uploads/images/2016/OpenseesCypressEditor1.png)
