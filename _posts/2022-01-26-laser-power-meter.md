@@ -7,6 +7,7 @@ tags:
 - Projects
 ---
 
+![Laser](/uploads/images/0000/Laser.jpg)
 I made a simple laser power meter. The results are pretty good. I measured my own Uniphase helium-neon laser, the results show the laser power is around 0.68 to 0.70 mW. The value is consistent with the measured results from Coherent LaserCheck. The laser power meter consists of three parts: the photodiode, termination board, and circuit board. Here is the photo of this laser power meter.
 
 <!-- more -->
