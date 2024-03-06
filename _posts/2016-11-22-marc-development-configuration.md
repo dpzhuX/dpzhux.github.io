@@ -1,5 +1,5 @@
 ---
-title: MSC.Marc user subroutine configuration
+title: MSC.Marc 2015 user subroutine configuration
 date: 2016-10-22 15:07:21
 categories:
 - Tutorials
