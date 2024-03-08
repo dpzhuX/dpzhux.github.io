@@ -8,17 +8,17 @@ category:
 - Photos
 tags:
 - Photos
-description: Jungmun-Daepo, Jeju
+description: Hallasan, Jeju
 ---
 
-![Jungmun-Daepo, Jeju](/uploads/images/2016/JejuHallasan1.jpg)
+![Hallasan, Jeju](/uploads/images/2016/JejuHallasan1.jpg)
 
-![Jungmun-Daepo, Jeju](/uploads/images/2016/JejuHallasan2.jpg)
+![Hallasan, Jeju](/uploads/images/2016/JejuHallasan2.jpg)
 
-![Jungmun-Daepo, Jeju](/uploads/images/2016/JejuHallasan3.jpg)
+![Hallasan, Jeju](/uploads/images/2016/JejuHallasan3.jpg)
 
-![Jungmun-Daepo, Jeju](/uploads/images/2016/JejuHallasan4.jpg)
+![Hallasan, Jeju](/uploads/images/2016/JejuHallasan4.jpg)
 
-![Jungmun-Daepo, Jeju](/uploads/images/2016/JejuHallasan5.jpg)
+![Hallasan, Jeju](/uploads/images/2016/JejuHallasan5.jpg)
 
-![Jungmun-Daepo, Jeju](/uploads/images/2016/JejuHallasan6.jpg)
+![Hallasan, Jeju](/uploads/images/2016/JejuHallasan6.jpg)
