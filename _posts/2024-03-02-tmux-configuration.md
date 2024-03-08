@@ -1,6 +1,6 @@
 ---
 title: Snippet Tmux configuration
-date: 2022-07-17 17:41:00
+date: 2024-03-02 17:41:00
 categories:
 - Snippets
 tags:

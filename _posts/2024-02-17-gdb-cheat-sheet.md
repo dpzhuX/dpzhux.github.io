@@ -1,5 +1,6 @@
 ---
 title: Snippet GDB cheat sheet
+date: 2024-02-17 09:30:15
 categories:
 - Snippets
 tags:
