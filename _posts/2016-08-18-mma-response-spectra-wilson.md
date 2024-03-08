@@ -81,11 +81,11 @@ The above equation can be resolved by superimposing the general solution and the
 Thus, we can get,
 
 $$
-{u_{i + 1}} = {u_i}\cos ({\omega _n}\Delta t) + \left( {\frac{\dot u_i}{\omega_n}} \right)\sin ({\omega _n}\Delta t) + \frac{F_i}{k}\left[ {1 – \cos ({\omega _n}\Delta t)} \right] + \newline \left( {\frac{\Delta {F_i}}{k}} \right)\left( {\frac{1}{\omega_n \Delta t}} \right)\left[ {\omega_n \Delta t – \sin \left( {\omega_n \Delta t} \right)} \right]
+{u_{i + 1}} = {u_i}\cos ({\omega _n}\Delta t) + \left( {\frac{\dot u_i}{\omega_n}} \right)\sin ({\omega _n}\Delta t) + \frac{F_i}{k}\left[ {1 – \cos ({\omega _n}\Delta t)} \right] + \\ \left( {\frac{\Delta {F_i}}{k}} \right)\left( {\frac{1}{\omega_n \Delta t}} \right)\left[ {\omega_n \Delta t – \sin \left( {\omega_n \Delta t} \right)} \right]
 $$
 
 $$
-\frac{\dot u_{i + 1}}{\omega_n} = – {u_i}\sin ({\omega _n}\Delta t) + \left( {\frac{\dot u_i}{\omega_n}} \right)\cos ({\omega _n}\Delta t) + \frac{F_i}{k}\sin ({\omega _n}\Delta t) + \newline \left( {\frac{\Delta {F_i}}{k}} \right)\left[ {1 – \cos \left( {\omega_n \Delta t} \right)/{\omega _n}\Delta t} \right]
+\frac{\dot u_{i + 1}}{\omega_n} = – {u_i}\sin ({\omega _n}\Delta t) + \left( {\frac{\dot u_i}{\omega_n}} \right)\cos ({\omega _n}\Delta t) + \frac{F_i}{k}\sin ({\omega _n}\Delta t) + \\ \left( {\frac{\Delta {F_i}}{k}} \right)\left[ {1 – \cos \left( {\omega_n \Delta t} \right)/{\omega _n}\Delta t} \right]
 $$
 
 The recursive equation for a damping system can be calculated in the same way. The following will be expressed in a simpler way,
