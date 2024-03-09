@@ -19,8 +19,8 @@ There are many types of response spectra, with displacement, velocity, and accel
 $$
 \begin{array}{l}
 {u_0}({T_n},\varsigma ) = \mathop {\max }\limits_t \left| {u(t,{T_n},\varsigma )} \right|\\
-{{\dot u}_0}({T_n},\varsigma ) = \mathop {\max }\limits_t \left| {\dot u(t,{T_n},\varsigma )} \right|\\
-{{\ddot u}_0}({T_n},\varsigma ) = \mathop {\max }\limits_t \left| {\ddot u(t,{T_n},\varsigma )} \right|
+{\dot u_0}({T_n},\varsigma ) = \mathop {\max }\limits_t \left| {\dot u(t,{T_n},\varsigma )} \right|\\
+{\ddot u_0}({T_n},\varsigma ) = \mathop {\max }\limits_t \left| {\ddot u(t,{T_n},\varsigma )} \right|
 \end{array}
 $$
 
