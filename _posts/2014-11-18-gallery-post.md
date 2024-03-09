@@ -2,12 +2,14 @@
 type: photo
 title: Gallery Post
 date: 2014-11-18 15:45:20
-category: Photo
 photos:
 - https://source.unsplash.com/random/600×300
 - https://source.unsplash.com/random/600×300
 - https://source.unsplash.com/random/600×300
-tags: 
+category:
+- Photos
+tags:
+- Photos
 description: Gallery Post Test.
 ---
 
