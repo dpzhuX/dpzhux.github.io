@@ -7,6 +7,7 @@ tags:
 - Software
 ---
 
+![DeltaZ](/uploads/images/0000/DeltaZ.jpg)
 DeltaZ is a software to edit the arbitrary waveform on RIGOL DG800/900 series. I write some scripts to control my RIGOL DG812. Finally, I decided to pack the scripts and wrote a user interface to control the device. That is DeltaZ. Click the "DOWNLOAD" button to download the software.
 
 <!-- more -->
