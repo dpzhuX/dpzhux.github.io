@@ -11,7 +11,7 @@ tags:
 Previously, I analyzed the crack stress intensity factor for a 2D plate. An edge crack is created at the bottom of the plate and the SIF is obtained at the crack tip. When I try to create a 3D model, I found there are some difference for defining parameters associated with the crack tip. So, I create another example to determine the SIF in a 3D model.
 
 <!-- more -->
-Here is the basic dimensions of the model. The model length and width are set to 0.5 m while the width is set to 5 mm. Thus, we general consider this plate under plane stress condition. There exists a vertical crack at the center with the length of 2a = 0.02 m. The typical material parameters are set here: elastic modulus is 2.1E11 and Poisson's ratio is 0.3,
+Here is the basic dimensions of the model. The model length and width are set to 0.5 m while the width is set to 5 mm. Thus, we general consider this plate under plane stress condition. There exists a vertical crack at the center with the length of 2a = 0.02 m. The typical material parameters are set here: elastic modulus is 2.1E11 MPa and Poisson's ratio is 0.3,
 ![Ansys 3D edge crack SIF](/uploads/images/2019/Ansys3dCrackSif1.svg)
 
 First, we should create a 2D model, as shown in the following figure. It should be noted that the central crack should not share the same edge,
