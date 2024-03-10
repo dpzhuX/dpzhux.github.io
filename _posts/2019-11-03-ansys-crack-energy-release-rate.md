@@ -1,5 +1,5 @@
 ---
-title: Ansys crack energy release rate
+title: Ansys central crack energy release rate
 date: 2019-11-03 08:29:55
 categories:
 - Explorations
