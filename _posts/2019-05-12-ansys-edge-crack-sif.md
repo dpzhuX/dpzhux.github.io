@@ -13,7 +13,7 @@ To determine the stress intensity factors with Ansys, we analyze the following 2
 <!-- more -->
 ![Ansys edge crack SIF](/uploads/images/2019/AnsysEdgeCrackSif1.svg)
 
-We first build the mode,
+We first build the model,
 
 ![Ansys edge crack SIF](/uploads/images/2019/AnsysEdgeCrackSif2.png)
 
