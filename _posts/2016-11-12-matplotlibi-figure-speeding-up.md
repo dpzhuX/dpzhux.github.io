@@ -7,7 +7,7 @@ tags:
 - Tutorials
 ---
 
-![Matplotlib](/uploads/images/0000/matplotlib.jpg)
+![Matplotlib](/uploads/images/0000/Matplotlib.jpg)
 Let's start with something important: for Python 3.5 with Anaconda, install OpenCV using the command:
 ```
 conda install -c menpo opencv3

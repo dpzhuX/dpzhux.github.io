@@ -7,7 +7,7 @@ tags:
 - Tutorials
 ---
 
-![Matplotlib](/uploads/images/0000/matplotlib.jpg)
+![Matplotlib](/uploads/images/0000/Matplotlib.jpg)
 Matplotlib, as a Python plotting library, is known for its capability to produce high-quality figures. Beyond static images, Matplotlib can also plot simple animations. While it doesn't adopt OpenGL for high-performance graphics like VisPy, it is still sufficiently for basic academic and research applications. This post turn a default Matplotlib example into a straightforward CPU monitor and introduces the basics of Matplotlib animation functions.
 
 <!-- more -->
