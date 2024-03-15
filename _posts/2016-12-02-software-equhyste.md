@@ -8,9 +8,10 @@ tags:
 ---
 
 ![Equhyste](/uploads/images/0000/Equhyste.jpg)
-I created a handy tool to calculate the area of a hysteresis loop and its equivalent viscous damping. Though the calculation isn't particularly complex, repetitive tasks can become tedious sometimes. This software can compute the complete cycles of a hysteresis loop, the area of each cycle, and the equivalent viscous damping corresponding to each cycle. The equivalent viscous damping is calculated using the following formula:
+I created a handy tool to calculate the area of a hysteresis loop and its equivalent viscous damping. Though the calculation isn't particularly complex, repetitive tasks can become tedious sometimes. This software can compute the complete cycles of a hysteresis loop, the area of each cycle, and the equivalent viscous damping corresponding to each cycle. The equivalent viscous damping is calculated using the following formula,
 
 <!-- more -->
+
 $${h_{eq}} = \frac{\Delta A}{4\pi  \cdot A}$$
 
 Where: $\Delta A$ is the area of the hysteresis loop, and $A$ is the area of the shaded triangle OAB.
