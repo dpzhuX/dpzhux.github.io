@@ -95,7 +95,12 @@
 
       img {
         display: block;
-        width: 100%;
+        margin: 0 auto;
+        // Cap the height so a portrait photo cannot outgrow the map container
+        // and leave Leaflet nothing to pan into view. Width follows the aspect.
+        width: auto;
+        max-width: 100%;
+        max-height: 240px;
         border-radius: 3px;
       }
     }

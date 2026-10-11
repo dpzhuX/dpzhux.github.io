@@ -255,6 +255,15 @@
     map.on('popupopen', function (e) {
       var link = e.popup.getElement().querySelector('.gpx-popup-link');
       if (!link) { return; }
+
+      // Leaflet measures the popup to decide whether to pan the map into view.
+      // On a first open the photo has not loaded, so it measures a near-empty
+      // box, skips panning, and the popup then grows outside the container.
+      // update() re-measures and re-runs that pan once the image is there.
+      var img = link.querySelector('img');
+      if (img && !img.complete) {
+        img.addEventListener('load', function () { e.popup.update(); }, { once: true });
+      }
       link.onclick = function (ev) {
         var href = link.getAttribute('href');
         var idx = 0;
