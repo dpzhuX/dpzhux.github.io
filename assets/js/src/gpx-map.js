@@ -44,6 +44,24 @@
     return h;
   });
 
+  // Must be an explicit value, not ''. Clearing the inline style would hand the
+  // element back to the stylesheet's display:none and hide it all over again.
+  function reveal(host, message) {
+    host.style.display = 'block';
+    if (message) {
+      var note = document.createElement('p');
+      note.className = 'gpx-caption gpx-error';
+      note.textContent = message;
+      host.parentNode.insertBefore(note, host);
+    }
+  }
+
+  // Last resort: if a block is still sitting in the DOM well after load, some
+  // step failed silently — show its config rather than leaving an empty gap.
+  setTimeout(function () {
+    hosts.forEach(function (h) { if (h.isConnected) { reveal(h); } });
+  }, 8000);
+
   var CDN = 'https://cdnjs.cloudflare.com/ajax/libs/';
   var EXIF_JS = CDN + 'exif-js/2.3.0/exif.min.js';
   var OSM = '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -356,11 +374,20 @@
   script(CDN + 'leaflet/1.9.4/leaflet.min.js', function () {
     script(CDN + 'leaflet-gpx/1.7.0/gpx.min.js', function () {
       script(EXIF_JS, function () {
-        Array.prototype.forEach.call(blocks, render);
+        Array.prototype.forEach.call(blocks, function (block) {
+          // One bad block must not take the rest of the page down with it, and
+          // a thrown error must never leave an invisible hole behind.
+          try {
+            render(block);
+          } catch (err) {
+            if (window.console) { console.error('gpx-map:', err); }
+            reveal(hostOf(block), 'Map failed to render: ' + err.message);
+          }
+        });
       });
     });
   }, function () {
     // Leaflet itself failed — show the config block rather than an empty gap.
-    hosts.forEach(function (h) { h.style.display = ''; });
+    hosts.forEach(function (h) { reveal(h); });
   });
 })();
