@@ -273,9 +273,9 @@
     var host = hostOf(block);
     var code = block.querySelector('code') || block;   // skips any line-number gutter
     var cfg = parse(code.textContent);
-    var src = cfg.track || cfg.gpx;                    // accept either key
+    var src = cfg.track;
 
-    var photos = list(cfg.photo).concat(list(cfg.img))
+    var photos = list(cfg.photo)
       .map(parsePhoto)
       .filter(function (p) { return p.src; });
     photos.forEach(function (p, i) { p.index = i; });
