@@ -1,1 +1,58 @@
 // Custom styles.
+
+// GPX map blocks
+// Rendered from ```gpx fences by assets/js/src/gpx-map.js
+// --------------------------------------------------
+
+// Hidden until the script replaces it with a map; re-shown by the script
+// if Leaflet fails to load, and by the <noscript> rule in _scripts/gpx-map.html.
+.language-gpx { display: none; }
+
+.gpx-figure {
+  margin: 1.5em 0;
+
+  .gpx-map {
+    width: 100%;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background: $whitesmoke;
+
+    // keep Leaflet's panes beneath the theme's sticky chrome
+    .leaflet-pane,
+    .leaflet-control { z-index: 1; }
+  }
+
+  .gpx-caption {
+    margin-top: .6em;
+    color: $grey-dark;
+    font-size: .9em;
+    text-align: center;
+
+    &.gpx-error { color: $red; }
+  }
+
+  .gpx-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 10px;
+    gap: 10px;
+    margin-top: 14px;
+
+    figure { margin: 0; }
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    figcaption {
+      margin-top: .35em;
+      color: $grey-dark;
+      font-size: .82em;
+      text-align: center;
+    }
+  }
+}
