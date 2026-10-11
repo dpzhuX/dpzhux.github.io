@@ -6,7 +6,11 @@
 
 // Hidden until the script replaces it with a map; re-shown by the script
 // if Leaflet fails to load, and by the <noscript> rule in _scripts/gpx-map.html.
-.language-gpx { display: none; }
+.language-gpx-map { display: none; }
+
+// Hiding the <code> alone leaves kramdown's empty grey <pre> on screen until
+// Leaflet loads. Interpolated so Sass 3.7 passes :has() through unparsed.
+#{'pre:has(> code.language-gpx-map)'} { display: none; }
 
 .gpx-figure {
   max-width: 100%;

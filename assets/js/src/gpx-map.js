@@ -1,7 +1,7 @@
 /*
- * gpx-map.js — renders ```gpx fenced blocks as Leaflet maps.
+ * gpx-map.js — renders ```gpx-map fenced blocks as Leaflet maps.
  *
- * Block syntax (inside a ```gpx fence):
+ * Block syntax (inside a ```gpx-map fence):
  *   track:  /uploads/files/2014/MountWashington.gpx
  *   title:  Mount Washington
  *   tiles:  topo | street          (default: topo)
@@ -22,8 +22,27 @@
 (function () {
   'use strict';
 
-  var blocks = document.querySelectorAll('.language-gpx');
+  // "gpx-map" rather than "gpx": the block holds config, not GPX source, so no
+  // Rouge lexer will ever claim the name and change the markup underneath us.
+  var blocks = document.querySelectorAll('.language-gpx-map');
   if (!blocks.length) { return; }
+
+  // Rouge has no "gpx" lexer, so kramdown skips the highlighter and emits a
+  // bare <pre><code class="language-gpx-map">. When a lexer does exist it emits
+  // <div class="language-x highlighter-rouge"> instead. Replace the outermost
+  // wrapper either way — left inside the <pre>, the map inherits the code
+  // block's grey padding and its horizontal scrollbar.
+  function hostOf(block) {
+    return block.closest('.highlighter-rouge') || block.closest('pre') || block;
+  }
+
+  // Hide immediately. The stylesheet can only reach the <code>, which would
+  // leave an empty grey <pre> on screen until Leaflet arrives from the CDN.
+  var hosts = Array.prototype.map.call(blocks, function (b) {
+    var h = hostOf(b);
+    h.style.display = 'none';
+    return h;
+  });
 
   var CDN = 'https://cdnjs.cloudflare.com/ajax/libs/';
   var EXIF_JS = CDN + 'exif-js/2.3.0/exif.min.js';
@@ -233,11 +252,8 @@
   }
 
   function render(block) {
-    // The class may sit on the wrapper div (kramdown+rouge) or on <code>; either
-    // way we replace the outermost wrapper so the map does not inherit the
-    // theme's code-block chrome (grey background, padding, line-number gutter).
-    var host = block.closest('.highlighter-rouge') || block;
-    var code = block.querySelector('code') || block;   // skips the line-number gutter
+    var host = hostOf(block);
+    var code = block.querySelector('code') || block;   // skips any line-number gutter
     var cfg = parse(code.textContent);
     var src = cfg.track || cfg.gpx;                    // accept either key
 
@@ -345,6 +361,6 @@
     });
   }, function () {
     // Leaflet itself failed — show the config block rather than an empty gap.
-    Array.prototype.forEach.call(blocks, function (b) { b.style.display = 'block'; });
+    hosts.forEach(function (h) { h.style.display = ''; });
   });
 })();

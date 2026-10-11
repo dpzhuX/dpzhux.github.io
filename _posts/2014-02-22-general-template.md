@@ -117,12 +117,12 @@ end
 
 ## GPX Track
 
-A `gpx` fenced block is replaced by an interactive map. Distance, elevation gain
+A `gpx-map` fenced block is replaced by an interactive map. Distance, elevation gain
 and duration are read from the track itself. `photo:` lines may be repeated; each
 is pinned on the map at its GPS EXIF location, or at an explicit `@ lat,lon`.
 Click a pin for a thumbnail, then the thumbnail for the full photo.
 
-```gpx
+```gpx-map
 title: Mount Washington via Tuckerman Ravine
 track: /uploads/files/2014/MountWashington.gpx
 tiles: topo
