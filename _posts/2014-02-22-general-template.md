@@ -115,6 +115,23 @@ end
 
 {% gist 996818 %}
 
+## GPX Track
+
+A `gpx` fenced block is replaced by an interactive map. Distance, elevation gain
+and duration are read from the track itself; `photo:` lines may be repeated and
+take an optional `| caption`.
+
+```gpx
+title: Mount Washington via Tuckerman Ravine
+track: /uploads/files/2014/MountWashington.gpx
+tiles: topo
+height: 420
+units: imperial
+photo: /uploads/images/2014/MountWashington1.jpg | Crystal Cascade
+photo: /uploads/images/2014/MountWashington2.jpg | Hermit Lake
+photo: /uploads/images/2014/MountWashington3.jpg | Summit
+```
+
 ## Image
 
 ![Random unsplash image](https://source.unsplash.com/random/600×300)
