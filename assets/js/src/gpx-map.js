@@ -354,8 +354,11 @@
     var sUnit = imperial ? 2.236936 : 3.6;      // m/s -> mph / km/h
     var sName = imperial ? 'mph' : 'km/h';
 
-    // Padding scales with the axis font set in custom.scss (16px in viewBox units).
-    var W = 800, H = 190, PL = 62, PR = 62, PT = 14, PB = 34;
+    // Padding has to clear the axis labels at the font set in custom.scss
+    // (16px in viewBox units). The SVG clips to the viewBox, so anything that
+    // overruns is simply cut off. The right side needs the most room: its
+    // widest label is "12.5 km/h" in metric, around 70 units.
+    var W = 800, H = 190, PL = 76, PR = 86, PT = 14, PB = 34;
     var pw = W - PL - PR, ph = H - PT - PB;
 
     var eles = data.map(function (p) { return p.ele; });
