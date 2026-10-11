@@ -86,6 +86,33 @@
     text-align: center;
   }
 
+  // Required credit, collapsed behind an (i). The text is clipped rather than
+  // removed, so it stays in the DOM for screen readers and for anyone who
+  // hovers, taps, or tabs into the links.
+  .leaflet-control-attribution.gpx-attr {
+    max-width: 2em;
+    overflow: hidden;
+    padding: 0 4px;
+    background: rgba(255, 255, 255, .7);
+    color: $grey-dim;
+    font-size: 10px;
+    line-height: 1.6;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: max-width .18s ease;
+
+    &::before {
+      content: "\24D8";   // circled latin small letter i
+      margin-right: 4px;
+    }
+
+    &:hover,
+    &:focus-within,
+    &.is-open { max-width: 100%; }
+
+    a { border-bottom: none; }
+  }
+
   .leaflet-popup-content {
     margin: 8px;
 
@@ -112,5 +139,107 @@
       font-size: .85em;
       text-align: center;
     }
+  }
+}
+
+// Elevation / speed profile under the map
+// --------------------------------------------------
+
+.gpx-figure {
+  .gpx-chart {
+    margin-top: 10px;
+  }
+
+  .gpx-chart-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .gpx-chart-grid {
+    stroke: $grey-light;
+    stroke-width: 1;
+    stroke-dasharray: 2 3;
+  }
+
+  .gpx-chart-ele {
+    fill: rgba(217, 72, 15, .16);
+    stroke: #d9480f;
+    stroke-width: 1.5;
+  }
+
+  .gpx-chart-spd {
+    fill: none;
+    stroke: #2b6cb0;
+    stroke-width: 1.5;
+    stroke-opacity: .85;
+  }
+
+  .gpx-chart-cursor {
+    stroke: $black-light;
+    stroke-width: 1;
+  }
+
+  // transparent band that catches the pointer across the plot area
+  .gpx-chart-hit {
+    fill: transparent;
+    cursor: crosshair;
+  }
+
+  .gpx-chart-axis {
+    fill: $grey-dark;
+    font-size: 11px;
+    text-anchor: middle;
+
+    &.gpx-chart-axis-y { text-anchor: end; }
+    &.gpx-chart-axis-s { text-anchor: start; fill: #2b6cb0; }
+  }
+
+  .gpx-chart-readout {
+    color: $grey-dark;
+    font-size: .82em;
+    text-align: center;
+    min-height: 1.2em;
+  }
+}
+
+// Stats banner under the profile
+// --------------------------------------------------
+
+.gpx-figure {
+  .gpx-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+    grid-gap: 1px;
+    gap: 1px;
+    margin-top: 12px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background: $border-color;   // shows through the gaps as hairline rules
+    overflow: hidden;
+  }
+
+  .gpx-stat {
+    padding: 8px 6px;
+    background: #fff;
+    text-align: center;
+  }
+
+  .gpx-stat-value {
+    display: block;
+    color: $black-light;
+    font-size: .95em;
+    font-weight: bold;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .gpx-stat-label {
+    display: block;
+    margin-top: 2px;
+    color: $grey-dark;
+    font-size: .72em;
+    letter-spacing: .02em;
   }
 }

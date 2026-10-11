@@ -7,6 +7,7 @@
  *   tiles:  topo | street          (default: topo)
  *   height: 420                    (pixels, default: 420)
  *   units:  metric | imperial      (default: metric)
+ *   chart:  both | elevation | speed | none   (default: both)
  *   photo:  /path/pic.jpg @ 44.27,-71.30 | Optional caption
  *
  * A photo is pinned on the map when a location can be resolved for it:
@@ -64,18 +65,20 @@
 
   var CDN = 'https://cdnjs.cloudflare.com/ajax/libs/';
   var EXIF_JS = CDN + 'exif-js/2.3.0/exif.min.js';
-  var OSM = '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+  // ODbL (map data) and CC-BY-SA (OpenTopoMap tiles) both require visible
+  // credit, so this is as short as it can legitimately get: "Leaflet",
+  // "Map data" and "Tiles" are all droppable, the sources are not.
+  var OSM = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   var TILES = {
     topo: {
       url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
       maxZoom: 17,
-      attribution: 'Map data &copy; ' + OSM +
-        ' &middot; Tiles <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
+      attribution: OSM + ' &middot; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
     },
     street: {
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       maxZoom: 19,
-      attribution: '&copy; ' + OSM
+      attribution: OSM
     }
   };
 
@@ -278,6 +281,255 @@
     return pts;
   }
 
+  /* ---------- elevation / speed profile ---------- */
+
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  function svgEl(name, attrs) {
+    var el = document.createElementNS(SVGNS, name);
+    for (var k in attrs) {
+      if (attrs.hasOwnProperty(k)) { el.setAttribute(k, attrs[k]); }
+    }
+    return el;
+  }
+
+  // leaflet-gpx hangs {time, ele, speed, ...} off every LatLng it parses.
+  function trackPoints(gpx) {
+    var out = [];
+    gpx.getLayers().forEach(function (layer) {
+      if (!layer.getLatLngs) { return; }
+      (function walk(arr) {
+        arr.forEach(function (x) {
+          if (Array.isArray(x)) { walk(x); }
+          else if (x && x.meta) { out.push(x); }
+        });
+      })(layer.getLatLngs());
+    });
+    return out;
+  }
+
+  // Cumulative distance plus a smoothed speed — raw GPS speed is far too
+  // jittery at 2-second sampling to plot directly.
+  function series(points, smooth) {
+    var data = [], cum = 0, prev = null;
+    points.forEach(function (ll) {
+      if (prev) { cum += prev.distanceTo(ll); }
+      data.push({ d: cum, ele: ll.meta.ele, spd: ll.meta.speed || 0, ll: ll });
+      prev = ll;
+    });
+    var half = Math.max(1, Math.round(smooth / 2));
+    data.forEach(function (p, i) {
+      var sum = 0, n = 0;
+      for (var j = i - half; j <= i + half; j++) {
+        if (j >= 0 && j < data.length) { sum += data[j].spd; n++; }
+      }
+      p.smooth = n ? sum / n : 0;
+    });
+    return data;
+  }
+
+  function buildChart(gpx, cfg, map) {
+    var mode = (cfg.chart || 'both').toLowerCase();
+    if (mode === 'none') { return null; }
+
+    var points = trackPoints(gpx);
+    if (points.length < 2) { return null; }
+
+    var data = series(points, 15);
+    var total = data[data.length - 1].d;
+    if (!total) { return null; }
+
+    var imperial = (cfg.units || '').toLowerCase() === 'imperial';
+    var dUnit = imperial ? 1609.344 : 1000;
+    var dName = imperial ? 'mi' : 'km';
+    var eUnit = imperial ? 3.28084 : 1;
+    var eName = imperial ? 'ft' : 'm';
+    var sUnit = imperial ? 2.236936 : 3.6;      // m/s -> mph / km/h
+    var sName = imperial ? 'mph' : 'km/h';
+
+    var W = 800, H = 170, PL = 46, PR = 46, PT = 12, PB = 26;
+    var pw = W - PL - PR, ph = H - PT - PB;
+
+    var eles = data.map(function (p) { return p.ele; });
+    var eMin = Math.min.apply(null, eles), eMax = Math.max.apply(null, eles);
+    if (eMax - eMin < 1) { eMax = eMin + 1; }
+    var sMax = Math.max.apply(null, data.map(function (p) { return p.smooth; })) || 1;
+
+    var x = function (d) { return PL + (d / total) * pw; };
+    var yE = function (e) { return PT + ph - ((e - eMin) / (eMax - eMin)) * ph; };
+    var yS = function (s) { return PT + ph - (s / sMax) * ph; };
+
+    // One point per horizontal pixel is plenty; 788 path segments is not.
+    var step = Math.max(1, Math.floor(data.length / pw));
+    var sampled = data.filter(function (p, i) {
+      return i % step === 0 || i === data.length - 1;
+    });
+
+    var svg = svgEl('svg', {
+      viewBox: '0 0 ' + W + ' ' + H,
+      class: 'gpx-chart-svg',
+      preserveAspectRatio: 'xMidYMid meet'
+    });
+
+    // horizontal guides + elevation labels
+    [0, 0.5, 1].forEach(function (f) {
+      var e = eMin + (eMax - eMin) * (1 - f);
+      var yy = PT + ph * f;
+      svg.appendChild(svgEl('line', {
+        x1: PL, y1: yy, x2: PL + pw, y2: yy, class: 'gpx-chart-grid'
+      }));
+      var t = svgEl('text', { x: PL - 6, y: yy + 3, class: 'gpx-chart-axis gpx-chart-axis-y' });
+      t.textContent = Math.round(e * eUnit) + (f === 0 ? ' ' + eName : '');
+      svg.appendChild(t);
+    });
+
+    // distance ticks
+    [0, 0.25, 0.5, 0.75, 1].forEach(function (f) {
+      var t = svgEl('text', { x: x(total * f), y: H - 8, class: 'gpx-chart-axis' });
+      t.textContent = (total * f / dUnit).toFixed(1) + (f === 1 ? ' ' + dName : '');
+      svg.appendChild(t);
+    });
+
+    if (mode === 'both' || mode === 'elevation') {
+      var area = 'M' + x(0) + ',' + (PT + ph);
+      sampled.forEach(function (p) { area += 'L' + x(p.d).toFixed(1) + ',' + yE(p.ele).toFixed(1); });
+      area += 'L' + x(total) + ',' + (PT + ph) + 'Z';
+      svg.appendChild(svgEl('path', { d: area, class: 'gpx-chart-ele' }));
+    }
+
+    if (mode === 'both' || mode === 'speed') {
+      var line = '';
+      sampled.forEach(function (p, i) {
+        line += (i ? 'L' : 'M') + x(p.d).toFixed(1) + ',' + yS(p.smooth).toFixed(1);
+      });
+      svg.appendChild(svgEl('path', { d: line, class: 'gpx-chart-spd' }));
+      var sl = svgEl('text', { x: PL + pw + 6, y: PT + 8, class: 'gpx-chart-axis gpx-chart-axis-s' });
+      sl.textContent = (sMax * sUnit).toFixed(1) + ' ' + sName;
+      svg.appendChild(sl);
+    }
+
+    // hover cursor, synced with a marker on the map
+    var cursor = svgEl('line', {
+      x1: PL, y1: PT, x2: PL, y2: PT + ph, class: 'gpx-chart-cursor', opacity: 0
+    });
+    svg.appendChild(cursor);
+    var hit = svgEl('rect', { x: PL, y: PT, width: pw, height: ph, class: 'gpx-chart-hit' });
+    svg.appendChild(hit);
+
+    var wrap = document.createElement('div');
+    wrap.className = 'gpx-chart';
+    wrap.appendChild(svg);
+    var read = document.createElement('div');
+    read.className = 'gpx-chart-readout';
+    read.innerHTML = '&nbsp;';
+    wrap.appendChild(read);
+
+    var dot = null;
+    function at(evt) {
+      var box = svg.getBoundingClientRect();
+      var px = ((evt.clientX - box.left) / box.width) * W;
+      var frac = Math.min(1, Math.max(0, (px - PL) / pw));
+      var p = data[Math.round(frac * (data.length - 1))];
+      if (!p) { return; }
+
+      cursor.setAttribute('x1', x(p.d));
+      cursor.setAttribute('x2', x(p.d));
+      cursor.setAttribute('opacity', 1);
+      read.textContent =
+        (p.d / dUnit).toFixed(2) + ' ' + dName + '  ·  ' +
+        Math.round(p.ele * eUnit) + ' ' + eName + '  ·  ' +
+        (p.smooth * sUnit).toFixed(1) + ' ' + sName;
+
+      if (!dot) {
+        dot = L.circleMarker(p.ll, {
+          radius: 6, color: '#fff', weight: 2,
+          fillColor: '#d9480f', fillOpacity: 1, interactive: false
+        }).addTo(map);
+      } else {
+        dot.setLatLng(p.ll);
+      }
+    }
+
+    svg.addEventListener('mousemove', at);
+    svg.addEventListener('touchmove', function (ev) {
+      if (ev.touches && ev.touches[0]) { at(ev.touches[0]); }
+    });
+    svg.addEventListener('mouseleave', function () {
+      cursor.setAttribute('opacity', 0);
+      read.innerHTML = '&nbsp;';
+      if (dot) { map.removeLayer(dot); dot = null; }
+    });
+
+    return wrap;
+  }
+
+  /* ---------- stats banner ---------- */
+
+  function hms(ms) {
+    var s = Math.round(ms / 1000);
+    var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
+    return h ? h + 'h ' + m + 'm' : m + 'm ' + (s % 60) + 's';
+  }
+
+  function pace(ms) {
+    var s = Math.round(ms / 1000);
+    return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2);
+  }
+
+  // Grouped rather than in Gaia's order: shape of the route, then time,
+  // then rate. Adjacent tiles stay related however the grid wraps.
+  function buildStats(gpx, cfg) {
+    var mode = (cfg.stats || 'full').toLowerCase();
+    if (mode === 'none') { return null; }
+
+    var imp = (cfg.units || '').toLowerCase() === 'imperial';
+    var dist = imp ? gpx.get_distance_imp() : gpx.get_distance() / 1000;
+    var up = imp ? gpx.get_elevation_gain_imp() : gpx.get_elevation_gain();
+    var down = imp ? gpx.get_elevation_loss_imp() : gpx.get_elevation_loss();
+    var mov = gpx.get_moving_time();
+    var tot = gpx.get_total_time();
+    var dU = imp ? 'mi' : 'km';
+    var eU = imp ? 'ft' : 'm';
+    var sU = imp ? 'mph' : 'km/h';
+    var pU = imp ? 'min/mi' : 'min/km';
+
+    var tiles = [
+      [dist.toFixed(2) + ' ' + dU, 'Distance'],
+      [Math.round(up) + ' ' + eU, 'Ascent'],
+      [Math.round(down) + ' ' + eU, 'Descent']
+    ];
+
+    // A track with no <time> gives zero duration; skip what it cannot support.
+    if (tot > 0 && mode !== 'basic') {
+      tiles.push([hms(mov), 'Moving time']);
+      tiles.push([hms(Math.max(0, tot - mov)), 'Stopped']);
+      tiles.push([hms(tot), 'Total time']);
+      tiles.push([(imp ? gpx.get_moving_speed_imp() : gpx.get_moving_speed()).toFixed(1) + ' ' + sU, 'Moving speed']);
+      tiles.push([(imp ? gpx.get_total_speed_imp() : gpx.get_total_speed()).toFixed(1) + ' ' + sU, 'Avg speed']);
+      tiles.push([pace(imp ? gpx.get_moving_pace_imp() : gpx.get_moving_pace()) + ' ' + pU, 'Pace']);
+    } else if (tot > 0) {
+      tiles.push([hms(mov), 'Moving time']);
+      tiles.push([pace(imp ? gpx.get_moving_pace_imp() : gpx.get_moving_pace()) + ' ' + pU, 'Pace']);
+    }
+
+    var wrap = document.createElement('div');
+    wrap.className = 'gpx-stats';
+    tiles.forEach(function (t) {
+      var cell = document.createElement('div');
+      cell.className = 'gpx-stat';
+      var v = document.createElement('span');
+      v.className = 'gpx-stat-value';
+      v.textContent = t[0];
+      var l = document.createElement('span');
+      l.className = 'gpx-stat-label';
+      l.textContent = t[1];
+      cell.appendChild(v);
+      cell.appendChild(l);
+      wrap.appendChild(cell);
+    });
+    return wrap;
+  }
+
   function render(block) {
     var host = hostOf(block);
     var code = block.querySelector('code') || block;   // skips any line-number gutter
@@ -315,6 +567,9 @@
     cap.textContent = cfg.title || '';
     fig.appendChild(cap);
 
+    var chartSlot = document.createElement('div');
+    fig.appendChild(chartSlot);
+
     var slot = document.createElement('div');   // holds the unpinned photos
     fig.appendChild(slot);
 
@@ -327,6 +582,25 @@
     // site.use_motion animates post content into place, so the container can
     // still be moving when Leaflet first measures it — a stale measurement
     // leaves the tiles short of the container and the background showing.
+    // The "Leaflet" prefix is a courtesy, not a licence term — drop it.
+    map.attributionControl.setPrefix('');
+
+    // Collapse the required credit behind an (i). It stays in the DOM for
+    // screen readers and expands on hover, tap, or keyboard focus, which is
+    // what OSM's guidelines allow for space-constrained maps.
+    var attr = map.attributionControl.getContainer();
+    attr.className += ' gpx-attr';
+    attr.setAttribute('title', 'Map credits');
+    L.DomEvent.disableClickPropagation(attr);
+    L.DomEvent.on(attr, 'click', function (ev) {
+      if (ev.target && ev.target.tagName === 'A') { return; }  // follow credit links
+      L.DomEvent.stop(ev);
+      var cls = attr.className;
+      attr.className = cls.indexOf(' is-open') > -1
+        ? cls.replace(' is-open', '')
+        : cls + ' is-open';
+    });
+
     var resize = function () { map.invalidateSize(false); };
     setTimeout(resize, 0);
     window.addEventListener('load', resize);
@@ -342,8 +616,22 @@
       resize();
       map.fitBounds(bounds, { padding: [18, 18] });
 
-      var s = stats(gpx, (cfg.units || '').toLowerCase() === 'imperial');
-      cap.textContent = cfg.title ? cfg.title + '  —  ' + s : s;
+      try {
+        var banner = buildStats(gpx, cfg);
+        var chart = buildChart(gpx, cfg, map);
+        if (chart) { chartSlot.appendChild(chart); }
+        if (banner) { chartSlot.appendChild(banner); }
+
+        // The banner already carries distance, gain and duration, so the
+        // caption drops back to just the title rather than repeating them.
+        if (!banner) {
+          var s = stats(gpx, (cfg.units || '').toLowerCase() === 'imperial');
+          cap.textContent = cfg.title ? cfg.title + '  —  ' + s : s;
+        }
+      } catch (err) {
+        if (window.console) { console.error('gpx-map chart:', err); }
+        cap.textContent = cfg.title || '';
+      }
 
       // EXIF lookups are async, so pins and the gallery land a moment later.
       resolveLocations(photos, function () {
