@@ -1,3 +1,9 @@
 {% comment %} Renders ```gpx-map fenced blocks as Leaflet maps. Styles live in _sass/_custom/custom.scss. {% endcomment %}
+{% comment %}
+  Cache-busted on site.time, not site.version: site.version is the static theme
+  version (5.1.1), so it never changes when this script is edited — and with
+  Cloudflare caching assets for 4 hours, a stale copy can be served alongside
+  freshly built HTML. site.time changes on every build.
+{% endcomment %}
 <noscript><style>.language-gpx-map, pre:has(> code.language-gpx-map) { display: block; }</style></noscript>
-<script type="text/javascript" src="{{ site.js | relative_url }}/src/gpx-map.js?v={{ site.version }}"></script>
+<script type="text/javascript" src="{{ site.js | relative_url }}/src/gpx-map.js?v={{ site.time | date: '%s' }}"></script>
