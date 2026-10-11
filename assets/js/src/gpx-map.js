@@ -379,16 +379,36 @@
       preserveAspectRatio: 'xMidYMid meet'
     });
 
-    // horizontal guides + elevation labels
+    var showEle = (mode === 'both' || mode === 'elevation');
+    var showSpd = (mode === 'both' || mode === 'speed');
+
+    // Horizontal guides, with each scale labelled top, middle and bottom in
+    // its own curve's colour: elevation down the left, speed down the right.
     [0, 0.5, 1].forEach(function (f) {
-      var e = eMin + (eMax - eMin) * (1 - f);
       var yy = PT + ph * f;
       svg.appendChild(svgEl('line', {
         x1: PL, y1: yy, x2: PL + pw, y2: yy, class: 'gpx-chart-grid'
       }));
-      var t = svgEl('text', { x: PL - 8, y: yy + 5, class: 'gpx-chart-axis gpx-chart-axis-y' });
-      t.textContent = Math.round(e * eUnit) + (f === 0 ? ' ' + eName : '');
-      svg.appendChild(t);
+
+      if (showEle) {
+        var te = svgEl('text', {
+          x: PL - 8, y: yy + 5,
+          class: 'gpx-chart-axis gpx-chart-axis-y gpx-chart-axis-e'
+        });
+        te.textContent = Math.round((eMin + (eMax - eMin) * (1 - f)) * eUnit) +
+          (f === 0 ? ' ' + eName : '');
+        svg.appendChild(te);
+      }
+
+      if (showSpd) {
+        var ts = svgEl('text', {
+          x: PL + pw + 8, y: yy + 5,
+          class: 'gpx-chart-axis gpx-chart-axis-s'
+        });
+        ts.textContent = (sMax * (1 - f) * sUnit).toFixed(1) +
+          (f === 0 ? ' ' + sName : '');
+        svg.appendChild(ts);
+      }
     });
 
     // distance ticks
@@ -398,22 +418,19 @@
       svg.appendChild(t);
     });
 
-    if (mode === 'both' || mode === 'elevation') {
+    if (showEle) {
       var area = 'M' + x(0) + ',' + (PT + ph);
       sampled.forEach(function (p) { area += 'L' + x(p.d).toFixed(1) + ',' + yE(p.ele).toFixed(1); });
       area += 'L' + x(total) + ',' + (PT + ph) + 'Z';
       svg.appendChild(svgEl('path', { d: area, class: 'gpx-chart-ele' }));
     }
 
-    if (mode === 'both' || mode === 'speed') {
+    if (showSpd) {
       var line = '';
       sampled.forEach(function (p, i) {
         line += (i ? 'L' : 'M') + x(p.d).toFixed(1) + ',' + yS(p.smooth).toFixed(1);
       });
       svg.appendChild(svgEl('path', { d: line, class: 'gpx-chart-spd' }));
-      var sl = svgEl('text', { x: PL + pw + 8, y: PT + 14, class: 'gpx-chart-axis gpx-chart-axis-s' });
-      sl.textContent = (sMax * sUnit).toFixed(1) + ' ' + sName;
-      svg.appendChild(sl);
     }
 
     // hover cursor, synced with a marker on the map
