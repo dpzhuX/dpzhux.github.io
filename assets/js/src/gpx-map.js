@@ -151,7 +151,12 @@
       jq.fancybox.open(items, {
         index: index,
         padding: 4,
-        helpers: { title: { type: 'inside' } }
+        helpers: {
+          title: { type: 'inside' },
+          // Mirrors the theme's own init in utils.js. Without it Fancybox locks
+          // the overlay, which drops the scroll position when the lightbox closes.
+          overlay: { locked: false }
+        }
       });
       return true;
     }
@@ -276,6 +281,13 @@
     var map = L.map(mapEl, { scrollWheelZoom: false });  // don't hijack page scroll
     L.tileLayer(tiles.url, tiles).addTo(map);
 
+    // site.use_motion animates post content into place, so the container can
+    // still be moving when Leaflet first measures it — a stale measurement
+    // leaves the tiles short of the container and the background showing.
+    var resize = function () { map.invalidateSize(false); };
+    setTimeout(resize, 0);
+    window.addEventListener('load', resize);
+
     new L.GPX(src, {
       async: true,
       // leaflet-gpx 404s its bundled marker icons unless these are set
@@ -284,6 +296,7 @@
     }).on('loaded', function (e) {
       var gpx = e.target;
       var bounds = gpx.getBounds();
+      resize();
       map.fitBounds(bounds, { padding: [18, 18] });
 
       var s = stats(gpx, (cfg.units || '').toLowerCase() === 'imperial');
@@ -296,6 +309,7 @@
 
         var pts = addPins(map, located, items);
         if (pts.length) {
+          resize();
           map.fitBounds(bounds.extend(L.latLngBounds(pts)), { padding: [18, 18] });
         }
 

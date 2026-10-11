@@ -9,10 +9,15 @@
 .language-gpx { display: none; }
 
 .gpx-figure {
+  max-width: 100%;
   margin: 1.5em 0;
 
   .gpx-map {
+    // normalize.scss sets content-box globally, so width:100% plus the border
+    // would overflow the column and give the page a horizontal scrollbar.
+    box-sizing: border-box;
     width: 100%;
+    max-width: 100%;
     border: 1px solid $border-color;
     border-radius: 4px;
     background: $whitesmoke;
