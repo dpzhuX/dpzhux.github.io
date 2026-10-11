@@ -118,8 +118,9 @@ end
 ## GPX Track
 
 A `gpx` fenced block is replaced by an interactive map. Distance, elevation gain
-and duration are read from the track itself; `photo:` lines may be repeated and
-take an optional `| caption`.
+and duration are read from the track itself. `photo:` lines may be repeated; each
+is pinned on the map at its GPS EXIF location, or at an explicit `@ lat,lon`.
+Click a pin for a thumbnail, then the thumbnail for the full photo.
 
 ```gpx
 title: Mount Washington via Tuckerman Ravine
@@ -129,7 +130,7 @@ height: 420
 units: imperial
 photo: /uploads/images/2014/MountWashington1.jpg | Crystal Cascade
 photo: /uploads/images/2014/MountWashington2.jpg | Hermit Lake
-photo: /uploads/images/2014/MountWashington3.jpg | Summit
+photo: /uploads/images/2014/MountWashington3.jpg @ 44.2706,-71.3033 | Summit
 ```
 
 ## Image
