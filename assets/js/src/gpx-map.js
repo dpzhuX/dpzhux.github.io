@@ -254,19 +254,12 @@
       pts.push([p.lat, p.lon]);
     });
 
-    // Popup DOM is rebuilt on every open, so wire the lightbox each time.
-    map.on('popupopen', function (e) {
-      var link = e.popup.getElement().querySelector('.gpx-popup-link');
+    // Leaflet rebuilds popup content from the HTML string on open AND on
+    // update(), so every handler has to be attached fresh each time.
+    function wirePopup(popup) {
+      var link = popup.getElement().querySelector('.gpx-popup-link');
       if (!link) { return; }
 
-      // Leaflet measures the popup to decide whether to pan the map into view.
-      // On a first open the photo has not loaded, so it measures a near-empty
-      // box, skips panning, and the popup then grows outside the container.
-      // update() re-measures and re-runs that pan once the image is there.
-      var img = link.querySelector('img');
-      if (img && !img.complete) {
-        img.addEventListener('load', function () { e.popup.update(); }, { once: true });
-      }
       link.onclick = function (ev) {
         var href = link.getAttribute('href');
         var idx = 0;
@@ -276,7 +269,21 @@
         });
         if (lightbox(items, idx)) { ev.preventDefault(); }
       };
-    });
+
+      // Leaflet measures the popup to decide whether to pan it into view. On a
+      // first open the photo has not loaded, so it measures a near-empty box
+      // and skips panning. update() re-measures — but it also rewrites the
+      // content, which is why the wiring has to be redone straight after.
+      var img = link.querySelector('img');
+      if (img && !img.complete) {
+        img.addEventListener('load', function () {
+          popup.update();
+          wirePopup(popup);
+        }, { once: true });
+      }
+    }
+
+    map.on('popupopen', function (e) { wirePopup(e.popup); });
 
     return pts;
   }
@@ -347,7 +354,8 @@
     var sUnit = imperial ? 2.236936 : 3.6;      // m/s -> mph / km/h
     var sName = imperial ? 'mph' : 'km/h';
 
-    var W = 800, H = 170, PL = 46, PR = 46, PT = 12, PB = 26;
+    // Padding scales with the axis font set in custom.scss (16px in viewBox units).
+    var W = 800, H = 190, PL = 62, PR = 62, PT = 14, PB = 34;
     var pw = W - PL - PR, ph = H - PT - PB;
 
     var eles = data.map(function (p) { return p.ele; });
@@ -378,14 +386,14 @@
       svg.appendChild(svgEl('line', {
         x1: PL, y1: yy, x2: PL + pw, y2: yy, class: 'gpx-chart-grid'
       }));
-      var t = svgEl('text', { x: PL - 6, y: yy + 3, class: 'gpx-chart-axis gpx-chart-axis-y' });
+      var t = svgEl('text', { x: PL - 8, y: yy + 5, class: 'gpx-chart-axis gpx-chart-axis-y' });
       t.textContent = Math.round(e * eUnit) + (f === 0 ? ' ' + eName : '');
       svg.appendChild(t);
     });
 
     // distance ticks
     [0, 0.25, 0.5, 0.75, 1].forEach(function (f) {
-      var t = svgEl('text', { x: x(total * f), y: H - 8, class: 'gpx-chart-axis' });
+      var t = svgEl('text', { x: x(total * f), y: H - 10, class: 'gpx-chart-axis' });
       t.textContent = (total * f / dUnit).toFixed(1) + (f === 1 ? ' ' + dName : '');
       svg.appendChild(t);
     });
@@ -403,7 +411,7 @@
         line += (i ? 'L' : 'M') + x(p.d).toFixed(1) + ',' + yS(p.smooth).toFixed(1);
       });
       svg.appendChild(svgEl('path', { d: line, class: 'gpx-chart-spd' }));
-      var sl = svgEl('text', { x: PL + pw + 6, y: PT + 8, class: 'gpx-chart-axis gpx-chart-axis-s' });
+      var sl = svgEl('text', { x: PL + pw + 8, y: PT + 14, class: 'gpx-chart-axis gpx-chart-axis-s' });
       sl.textContent = (sMax * sUnit).toFixed(1) + ' ' + sName;
       svg.appendChild(sl);
     }
@@ -562,13 +570,14 @@
     mapEl.style.height = (parseInt(cfg.height, 10) || 420) + 'px';
     fig.appendChild(mapEl);
 
+    // Order: map, profile, stats, caption, gallery.
+    var chartSlot = document.createElement('div');
+    fig.appendChild(chartSlot);
+
     var cap = document.createElement('figcaption');
     cap.className = 'gpx-caption';
     cap.textContent = cfg.title || '';
     fig.appendChild(cap);
-
-    var chartSlot = document.createElement('div');
-    fig.appendChild(chartSlot);
 
     var slot = document.createElement('div');   // holds the unpinned photos
     fig.appendChild(slot);

@@ -189,7 +189,9 @@
 
   .gpx-chart-axis {
     fill: $grey-dark;
-    font-size: 11px;
+    // viewBox units, so this scales down with the SVG; the chart's PL/PR/PB
+    // padding in gpx-map.js is sized to match.
+    font-size: 16px;
     text-anchor: middle;
 
     &.gpx-chart-axis-y { text-anchor: end; }
@@ -208,22 +210,26 @@
 // --------------------------------------------------
 
 .gpx-figure {
+  // Flex rather than grid: a grid leaves empty cells on the last row, which
+  // showed through as grey gaps. Flex items grow to fill whatever row they
+  // land on, so 9 tiles wrap as 5+4 or 6+3 with no holes at any width.
   .gpx-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
-    grid-gap: 1px;
-    gap: 1px;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 12px;
     border: 1px solid $border-color;
     border-radius: 4px;
-    background: $border-color;   // shows through the gaps as hairline rules
-    overflow: hidden;
+    background: #fff;
+    overflow: hidden;   // clips the outermost dividers below
   }
 
   .gpx-stat {
-    padding: 8px 6px;
-    background: #fff;
+    flex: 1 1 96px;
+    padding: 9px 8px;
     text-align: center;
+    // Dividers drawn per cell; the container's overflow trims the ones that
+    // would otherwise double up on the outer edges.
+    box-shadow: -1px 0 0 $border-color, 0 -1px 0 $border-color;
   }
 
   .gpx-stat-value {
