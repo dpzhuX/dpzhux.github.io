@@ -432,16 +432,32 @@
     read.innerHTML = '&nbsp;';
     wrap.appendChild(read);
 
+    // The x axis is distance, but points are sampled at a constant time
+    // interval. Indexing by fraction-of-count therefore drifts from
+    // fraction-of-width wherever the pace changed — badly around a rest stop,
+    // and back in agreement only at the two ends. Search by distance instead.
+    function pointAt(dist) {
+      var lo = 0, hi = data.length - 1;
+      while (lo < hi) {
+        var mid = (lo + hi) >> 1;
+        if (data[mid].d < dist) { lo = mid + 1; } else { hi = mid; }
+      }
+      return data[lo];
+    }
+
     var dot = null;
     function at(evt) {
       var box = svg.getBoundingClientRect();
       var px = ((evt.clientX - box.left) / box.width) * W;
       var frac = Math.min(1, Math.max(0, (px - PL) / pw));
-      var p = data[Math.round(frac * (data.length - 1))];
+      var p = pointAt(frac * total);
       if (!p) { return; }
 
-      cursor.setAttribute('x1', x(p.d));
-      cursor.setAttribute('x2', x(p.d));
+      // Pinned to the pointer, not to the matched point, so the line and the
+      // cursor can never visibly disagree.
+      var cx = PL + frac * pw;
+      cursor.setAttribute('x1', cx);
+      cursor.setAttribute('x2', cx);
       cursor.setAttribute('opacity', 1);
       read.textContent =
         (p.d / dUnit).toFixed(2) + ' ' + dName + '  ·  ' +
@@ -451,7 +467,8 @@
       if (!dot) {
         dot = L.circleMarker(p.ll, {
           radius: 6, color: '#fff', weight: 2,
-          fillColor: '#d9480f', fillOpacity: 1, interactive: false
+          // Blue so it reads as the chart cursor's twin, not as a photo pin.
+          fillColor: '#2b6cb0', fillOpacity: 1, interactive: false
         }).addTo(map);
       } else {
         dot.setLatLng(p.ll);
