@@ -1,5 +1,5 @@
 ---
-title: Devils Tower Trail, Wyoming
+title: Devils Tower Trail, Devils Tower, Wyoming
 date: 2026-06-03 10:11:41
 photos:
 - /uploads/images/0000/HikingCollection.jpg
@@ -7,11 +7,11 @@ categories:
 - Hiking
 tags:
 - Hiking
-description: Devils Tower Trail, Wyoming
+description: Devils Tower Trail, Devils Tower, Wyoming
 ---
 
 ```gpx-map
-title: Devils Tower Trail, Wyoming
+title: Devils Tower Trail, Devils Tower, Wyoming
 track: /uploads/files/2026/DevilsTowerTrail.gpx
 units: imperial
 chart: both
