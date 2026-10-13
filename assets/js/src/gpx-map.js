@@ -638,7 +638,7 @@
     host.parentNode.replaceChild(fig, host);
 
     var tiles = TILES[(cfg.tiles || 'topo').toLowerCase()] || TILES.topo;
-    var map = L.map(mapEl, { scrollWheelZoom: false });  // don't hijack page scroll
+    var map = L.map(mapEl, { scrollWheelZoom: true });
     L.tileLayer(tiles.url, tiles).addTo(map);
 
     // site.use_motion animates post content into place, so the container can

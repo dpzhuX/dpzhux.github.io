@@ -113,13 +113,10 @@
     a { border-bottom: none; }
   }
 
-  // Full screen / recentre, sharing Leaflet's own .leaflet-bar styling so they
-  // sit flush under the zoom buttons.
+  // Full screen / recentre share Leaflet's .leaflet-bar so all four buttons
+  // sit in one stack.
   .leaflet-bar a.gpx-ctl {
     color: $black-dim;
-    font-size: 15px;
-    line-height: 26px;
-    text-align: center;
     text-decoration: none;
     border-bottom: none;   // the theme underlines links by default
   }
@@ -279,4 +276,18 @@
 .gpx-map:-webkit-full-screen {
   border: 0;
   border-radius: 0;
+}
+
+// One weight for all four map buttons. Leaflet ships +/- as bold 18px
+// monospace, which sits much heavier than the full-screen and recentre
+// glyphs beside it. Needs .gpx-figure as well as .gpx-map: Leaflet's own
+// stylesheet is injected at runtime and so lands after ours in the cascade,
+// which would win any tie on specificity.
+.gpx-figure .gpx-map .leaflet-bar a {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 26px;
+  text-align: center;
+  text-indent: 0;
 }
