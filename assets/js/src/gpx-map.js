@@ -181,6 +181,22 @@
     });
   }
 
+  /* ---------- full screen ---------- */
+
+  function fsElement() {
+    return document.fullscreenElement || document.webkitFullscreenElement || null;
+  }
+
+  function toggleFullscreen(el) {
+    if (fsElement()) {
+      var exit = document.exitFullscreen || document.webkitExitFullscreen;
+      if (exit) { exit.call(document); }
+    } else {
+      var req = el.requestFullscreen || el.webkitRequestFullscreen;
+      if (req) { req.call(el); }
+    }
+  }
+
   /* ---------- lightbox ---------- */
 
   // Reuses the theme's Fancybox (loaded globally when site.fancybox is on).
@@ -651,6 +667,56 @@
     setTimeout(resize, 0);
     window.addEventListener('load', resize);
 
+    // Set once the track has loaded; the recentre button is inert until then.
+    var homeBounds = null;
+
+    // Full screen and recentre, stacked under Leaflet's own +/- in a matching
+    // .leaflet-bar so they read as one control group.
+    var canFullscreen = !!(mapEl.requestFullscreen || mapEl.webkitRequestFullscreen);
+    var savedHeight = mapEl.style.height;
+
+    var Tools = L.Control.extend({
+      options: { position: 'topleft' },
+      onAdd: function () {
+        var bar = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+
+        if (canFullscreen) {
+          var full = L.DomUtil.create('a', 'gpx-ctl', bar);
+          full.href = '#';
+          full.title = 'Full screen';
+          full.setAttribute('role', 'button');
+          full.innerHTML = '⛶';          // ⛶
+          L.DomEvent.on(full, 'click', function (ev) {
+            L.DomEvent.stop(ev);
+            toggleFullscreen(mapEl);
+          });
+        }
+
+        var home = L.DomUtil.create('a', 'gpx-ctl', bar);
+        home.href = '#';
+        home.title = 'Recentre on the track';
+        home.setAttribute('role', 'button');
+        home.innerHTML = '⌖';            // ⌖
+        L.DomEvent.on(home, 'click', function (ev) {
+          L.DomEvent.stop(ev);
+          if (homeBounds) { map.fitBounds(homeBounds, { padding: [18, 18] }); }
+        });
+
+        L.DomEvent.disableClickPropagation(bar);
+        return bar;
+      }
+    });
+    map.addControl(new Tools());
+
+    // The container carries an inline height, which a stylesheet rule could
+    // not override — so swap it here rather than fighting it with !important.
+    function onFullscreenChange() {
+      mapEl.style.height = (fsElement() === mapEl) ? '100%' : savedHeight;
+      setTimeout(resize, 0);
+    }
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+
     new L.GPX(src, {
       async: true,
       // leaflet-gpx 404s its bundled marker icons unless these are set
@@ -659,6 +725,8 @@
     }).on('loaded', function (e) {
       var gpx = e.target;
       var bounds = gpx.getBounds();
+      // extend() mutates in place, so the pins added later are picked up too.
+      homeBounds = bounds;
       resize();
       map.fitBounds(bounds, { padding: [18, 18] });
 

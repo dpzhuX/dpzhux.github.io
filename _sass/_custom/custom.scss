@@ -113,6 +113,17 @@
     a { border-bottom: none; }
   }
 
+  // Full screen / recentre, sharing Leaflet's own .leaflet-bar styling so they
+  // sit flush under the zoom buttons.
+  .leaflet-bar a.gpx-ctl {
+    color: $black-dim;
+    font-size: 15px;
+    line-height: 26px;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: none;   // the theme underlines links by default
+  }
+
   .leaflet-popup-content {
     margin: 8px;
 
@@ -255,4 +266,17 @@
     font-size: .72em;
     letter-spacing: .02em;
   }
+}
+
+// Full-screen map. Deliberately two rules rather than one selector list: a
+// browser that does not know one of these pseudo-classes discards the whole
+// list, so combining them would break the other.
+.gpx-map:fullscreen {
+  border: 0;
+  border-radius: 0;
+}
+
+.gpx-map:-webkit-full-screen {
+  border: 0;
+  border-radius: 0;
 }
